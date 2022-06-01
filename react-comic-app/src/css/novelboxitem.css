@@ -1,0 +1,45 @@
+.nb-item {
+    height: 120px;
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid lightgray;
+}
+
+.nb-item__img {
+    height: 100px;
+    width: 75px;
+    margin-right: 15px;
+    background: url("https://i.imgur.com/UPoAKDh.jpg");
+    background-size: cover !important;
+    background-position: top center !important;
+}
+
+.nb-item__title {
+    font-weight: 700;
+    color: black !important;
+}
+
+.nb-item__title:hover {
+    color: gray !important;
+}
+
+.nb-item__description {
+    margin-top: 9px;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+.nb-item-foot {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nb-item__category {
+    border: 1px solid gray;
+    padding: 0 10px;
+}
+
+.nb-item__category:hover {
+    border: 1px solid lightgray;
+}

@@ -1,0 +1,24 @@
+.navbar {
+    line-height: 45px;
+    border: 1px solid lightgray;
+    padding: 0 !important;
+}
+
+.navbar-brand {
+    padding: 0 !important;
+}
+
+.navbar-collapse {
+    flex-direction: row-reverse;
+}
+
+.nav-link {
+    padding: 0.5rem 1.5rem !important;
+}
+
+header .nav-link:hover,
+header .active {
+    background: dodgerblue;
+    color: white !important;
+    transition: 0.25s linear;
+}
