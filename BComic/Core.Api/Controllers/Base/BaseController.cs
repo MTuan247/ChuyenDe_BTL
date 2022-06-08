@@ -15,7 +15,7 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseController<TEntity> : ControllerBase
+    public class BaseController<TEntity> : ControllerBase where TEntity : class
     {
         #region Fields
         protected ServiceResult serviceResult;
@@ -38,13 +38,97 @@ namespace Api.Controllers
         /// Created by: NMTuan (02/08/2021)
         /// Modified by: NMTuan (02/08/2021)
         [HttpGet]
-        [Authorize(Roles = Role.Admin)]
         public virtual IActionResult Get()
         {
             try
             {
                 var entities = BLFactory.CreateAs<BaseBL<TEntity>>(serviceCollection).GetEntities();
                 return Ok(entities);
+            }
+            catch (Exception ex)
+            {
+                serviceResult.ExceptionHandle(ex);
+                return StatusCode(500, serviceResult);
+            }
+
+        }
+
+        /// <summary>
+        /// Method get lấy dữ liệu theo id
+        /// </summary>
+        /// <returns></returns>
+        /// Created by: NMTuan (02/08/2021)
+        /// Modified by: NMTuan (02/08/2021)
+        [HttpGet("{id}")]
+        public virtual IActionResult GetById(int id)
+        {
+            try
+            {
+                var entity = BLFactory.CreateAs<BaseBL<TEntity>>(serviceCollection).GetEntityById(id);
+                return Ok(entity);
+            }
+            catch (Exception ex)
+            {
+                serviceResult.ExceptionHandle(ex);
+                return StatusCode(500, serviceResult);
+            }
+
+        }
+
+        /// <summary>
+        /// Method insert dữ liệu
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Authorize(Roles = Role.Admin)]
+        public virtual IActionResult Insert(TEntity entity)
+        {
+            try
+            {
+                var success = BLFactory.CreateAs<BaseBL<TEntity>>(serviceCollection).Insert(entity);
+                return Ok(success);
+            }
+            catch (Exception ex)
+            {
+                serviceResult.ExceptionHandle(ex);
+                return StatusCode(500, serviceResult);
+            }
+
+        }
+
+        /// <summary>
+        /// Method insert dữ liệu
+        /// </summary>
+        /// <returns></returns>
+        [HttpPut]
+        [Authorize(Roles = Role.Admin)]
+        public virtual IActionResult Update(TEntity entity)
+        {
+            try
+            {
+                var success = BLFactory.CreateAs<BaseBL<TEntity>>(serviceCollection).Update(entity);
+                return Ok(success);
+            }
+            catch (Exception ex)
+            {
+                serviceResult.ExceptionHandle(ex);
+                return StatusCode(500, serviceResult);
+            }
+
+        }
+
+        /// <summary>
+        /// Method delete dữ liệu
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete]
+        [Authorize(Roles = Role.Admin)]
+        public virtual IActionResult Delete(TEntity entity)
+        {
+            try
+            {
+                var success = BLFactory.CreateAs<BaseBL<TEntity>>(serviceCollection).Delete(entity);
+                return Ok(success);
             }
             catch (Exception ex)
             {

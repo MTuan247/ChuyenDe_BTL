@@ -92,27 +92,15 @@ namespace Library.Models
     public class BaseEntity
     {
         #region Properties
+
         /// <summary>
-        /// Trạng thái entity : add, update, delete
+        /// Hàm clone
         /// </summary>
-        public EntityState EntityState { get; set; }
-        /// <summary>
-        /// Ngày tạo
-        /// </summary>
-        #nullable enable
-        public DateTime? CreatedDate { get; set; }
-        /// <summary>
-        /// Người tạo
-        /// </summary>
-        public string? CreatedBy { get; set; }
-        /// <summary>
-        /// Ngày chỉnh sửa
-        /// </summary>
-        public DateTime? ModifiedDate { get; set; }
-        /// <summary>
-        /// Người chỉnh sửa
-        /// </summary>
-        public string? ModifiedBy { get; set; }
+        /// <returns></returns>
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
         #endregion
 
     }

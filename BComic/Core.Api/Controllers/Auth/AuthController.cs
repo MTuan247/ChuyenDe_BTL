@@ -24,8 +24,8 @@ namespace Api.Controllers.Auth
         #endregion
 
         [AllowAnonymous]
-        [HttpPost]
-        public IActionResult Login([FromBody] User login)
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] UserDTO login)
         {
             IActionResult response = Unauthorized();
             var bl = BLFactory.CreateAs<AuthBL>(serviceCollection);

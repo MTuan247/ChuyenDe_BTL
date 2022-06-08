@@ -24,7 +24,7 @@ namespace DL.Implement
         /// <returns></returns>
         /// CreatedBy: NMTuan (30/07/2021)
         /// ModifiedBy: NMTuan (30/07/2021)
-        public User GetUser(string userName, string passWord)
+        public UserDTO GetUser(string userName, string passWord)
         {
 
             var sql = $"Select * from User u where u.UserName = @UserName and u.Password = @Password;";
@@ -34,7 +34,7 @@ namespace DL.Implement
             parameters.Add("@UserName", userName);
             parameters.Add("@Password", passWord);
 
-            var user = _dbConnection.QueryFirstOrDefault<User>(sql, parameters, commandType: CommandType.Text);
+            var user = _dbConnection.QueryFirstOrDefault<UserDTO>(sql, parameters, commandType: CommandType.Text);
 
             return user;
         }
