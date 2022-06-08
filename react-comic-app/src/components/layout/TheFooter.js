@@ -10,10 +10,10 @@ export default function TheFooter() {
           <span class="color-dodgerblue">N</span>
         </strong>
       </div>
-      <div id="footer__text">
+      <div id="footer__text" className="container-xl">
         <strong>
-          <span class="r">R</span>
-          <span class="novel">Novel </span>
+          <span class="color-react">R</span>
+          <span class="color-dodgerblue">Novel </span>
         </strong>
         là nền tảng mở dành cho các tác giả và độc giả đam mê truyện chữ, nơi thành viên có thể tự
         do xuất bản các tác phẩm của mình với nhiều chức năng liên tục được cải tiến sẽ mang lại

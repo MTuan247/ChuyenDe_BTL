@@ -10,7 +10,6 @@
     height: 100px;
     width: 75px;
     margin-right: 15px;
-    background: url("https://i.imgur.com/UPoAKDh.jpg");
     background-size: cover !important;
     background-position: top center !important;
 }
@@ -33,6 +32,10 @@
 .nb-item-foot {
     display: flex;
     justify-content: space-between;
+}
+
+.nb-item__img {
+    border: 1px solid lightgray;
 }
 
 .nb-item__category {
