@@ -30,7 +30,7 @@ namespace BL.Auth
         /// </summary>
         /// <param name="userInfo"></param>
         /// <returns></returns>
-        public string GenerateJSONWebToken(User userInfo)
+        public string GenerateJSONWebToken(UserDTO userInfo)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(serviceCollection.Configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -58,13 +58,13 @@ namespace BL.Auth
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        public User AuthenticateUser(User login)
+        public UserDTO AuthenticateUser(UserDTO login)
         {
-            User user;
+            UserDTO user;
 
             var userBL = BLFactory.CreateAs<UserBL>(serviceCollection);
 
-            user = userBL.GetUser(login.Username, login.Password);
+            user = (UserDTO) userBL.GetUser(login.Username, login.Password);
 
             if (user != null)
             {

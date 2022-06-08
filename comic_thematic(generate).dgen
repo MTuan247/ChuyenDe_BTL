@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Devart (www.devart.com), Data-Generator document file -->
+<!-- Modifying this generated file will probably render it invalid -->
+<DataGenDocument xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="5.0">
+  <Settings>
+    <Provider>59f90733-4d68-4fdf-82a7-f0fcbf5460aa</Provider>
+    <ConnectionString>User Id=root;Host=localhost;Character Set=utf8</ConnectionString>
+    <CategoryId>00000000-0000-0000-0000-000000000000</CategoryId>
+    <AllowNulls>false</AllowNulls>
+    <IncludeNullsPercent>10</IncludeNullsPercent>
+    <AllowEmptyString>false</AllowEmptyString>
+    <IncludeEmptyStringPercent>10</IncludeEmptyStringPercent>
+    <DatabaseName>comic_thematic</DatabaseName>
+    <PopulationType>RowsCount</PopulationType>
+    <RowsToGenerate>50</RowsToGenerate>
+    <ProportionOfExistingData>10</ProportionOfExistingData>
+    <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+    <GenerateUniqueValues>false</GenerateUniqueValues>
+    <TruncateTables>true</TruncateTables>
+    <DistributionMode>Seed</DistributionMode>
+    <Seed>8</Seed>
+    <LastSeedValue>0</LastSeedValue>
+    <Language>US</Language>
+  </Settings>
+  <Tables>
+    <Table Name="category">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>5</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="CategoryId">
+          <Checked>true</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="MySqlIntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Sequential</ValueDistributionMode>
+            <SeedValue>8</SeedValue>
+            <MinValue>1</MinValue>
+            <MaxValue>9999999</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>MySqlIntegerGenerator</GeneratorType>
+          <GeneratorName>ID (sequential)</GeneratorName>
+          <GeneratorDescription>1, 2, 3, 4, ..., 9, 10, 11, 12, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="CategoryName">
+          <Checked>true</Checked>
+          <DataType>VARCHAR</DataType>
+          <GeneratorOptions xsi:type="MySqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>8</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>Huyền huyễn|Kịch tính|Tình cảm|Phiêu lưu|Hành động</Expression>
+          </GeneratorOptions>
+          <GeneratorType>MySqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Product Category</GeneratorName>
+          <GeneratorDescription>Movies, Pharmacy, Garden, Books, Clothing, Furniture, ...</GeneratorDescription>
+          <GeneratorCategory>Product</GeneratorCategory>
+          <Length>255</Length>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="comic">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>50</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="ComicId">
+          <Checked>true</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="MySqlIntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Sequential</ValueDistributionMode>
+            <SeedValue>11</SeedValue>
+            <MinValue>1</MinValue>
+            <MaxValue>9999999</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>MySqlIntegerGenerator</GeneratorType>
+          <GeneratorName>ID (sequential)</GeneratorName>
+          <GeneratorDescription>1, 2, 3, 4, ..., 9, 10, 11, 12, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="ComicCode">
+          <Checked>true</Checked>
+          <DataType>VARCHAR</DataType>
+          <GeneratorOptions xsi:type="MySqlVarcharGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>0</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>11</SeedValue>
+            <MinStringAllowedLenght>1</MinStringAllowedLenght>
+            <MaxStringAllowedLenght>20</MaxStringAllowedLenght>
+            <MinStringLenght>1</MinStringLenght>
+            <MaxStringLenght>20</MaxStringLenght>
+            <StartChar>97</StartChar>
+            <EndChar>122</EndChar>
+            <CodePage>20127</CodePage>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>NULL</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MySqlVarcharGenerator</GeneratorType>
+          <GeneratorName>string</GeneratorName>
+          <GeneratorDescription>fill with character string values</GeneratorDescription>
+          <Length>20</Length>
+        </Column>
+        <Column Name="ComicName">
+          <Checked>true</Checked>
+          <DataType>VARCHAR</DataType>
+          <GeneratorOptions xsi:type="MySqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>11</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>((Com|Speak|Sub|Con|Mic|Tweet|Read|Tab|Cab|Tab|Bi|Te|Mono|Print|Pro|Mon|Arm|Sup|Cart|Char|Re|Clean|Re|Trans|An|Stereo|Play|Com|Amp)(put|hold|ceiv|woof|mut|top|ta|le|cul|cess|tell|ject|find|pick|band|cord|plott|tin|cycl|tect|ni|cord|lict|tin|lifi)(|ic|im|in|up|ad|er||on|ep|ed|let|ga|aqu|ef|edg|op|oll|omm|ew|fi|an|ex|pl)?(er|or|er|on|phone|ra|entor|ator|ar|er|scope|or|ry|ridge|let))</Expression>
+          </GeneratorOptions>
+          <GeneratorType>MySqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Product Name</GeneratorName>
+          <GeneratorDescription>Repickentor, Playtinon, Cleantinedridge, Tweetnier, Cartholdoper, ... </GeneratorDescription>
+          <GeneratorCategory>Product</GeneratorCategory>
+          <Length>255</Length>
+        </Column>
+        <Column Name="Like">
+          <Checked>true</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="MySqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>11</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>0
+</Expression>
+          </GeneratorOptions>
+          <GeneratorType>MySqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="Subcribe">
+          <Checked>true</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="MySqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>12</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>0</Expression>
+          </GeneratorOptions>
+          <GeneratorType>MySqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="Chapter">
+          <Checked>true</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="MySqlIntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>13</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>10</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>NULL</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MySqlIntegerGenerator</GeneratorType>
+          <GeneratorName>int</GeneratorName>
+          <GeneratorDescription>fill with 32-bit signed integer values</GeneratorDescription>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="Status">
+          <Checked>true</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="MySqlIntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>14</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>1</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>NULL</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MySqlIntegerGenerator</GeneratorType>
+          <GeneratorName>int</GeneratorName>
+          <GeneratorDescription>fill with 32-bit signed integer values</GeneratorDescription>
+          <Precision>1</Precision>
+        </Column>
+        <Column Name="Thumbnail">
+          <Checked>true</Checked>
+          <DataType>LONGTEXT</DataType>
+          <GeneratorOptions xsi:type="MySqlVarcharGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>0</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>12</SeedValue>
+            <MinStringAllowedLenght>1</MinStringAllowedLenght>
+            <MaxStringAllowedLenght>16777215</MaxStringAllowedLenght>
+            <MinStringLenght>1</MinStringLenght>
+            <MaxStringLenght>1</MaxStringLenght>
+            <StartChar>97</StartChar>
+            <EndChar>122</EndChar>
+            <CodePage>20127</CodePage>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>NULL</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MySqlVarcharGenerator</GeneratorType>
+          <GeneratorName>string</GeneratorName>
+          <GeneratorDescription>fill with character string values</GeneratorDescription>
+        </Column>
+        <Column Name="CreatedDate">
+          <Checked>true</Checked>
+          <DataType>DATETIME</DataType>
+          <GeneratorOptions xsi:type="MySqlDateTimeGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>11</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <OffsetFromColumnMaxTimeTicks>10000000</OffsetFromColumnMaxTimeTicks>
+            <OffsetFromColumnMinTimeTicks>10000000</OffsetFromColumnMinTimeTicks>
+            <DateTimeRange>Now</DateTimeRange>
+            <UseOffsetDetails>false</UseOffsetDetails>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2022-06-08T00:00:00+07:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>0</MaxFraction>
+            <MaxAllowedFraction>0</MaxAllowedFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>0</Scale>
+            <Precision>0</Precision>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>MySqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+        </Column>
+        <Column Name="ModifiedDate">
+          <Checked>true</Checked>
+          <DataType>DATETIME</DataType>
+          <GeneratorOptions xsi:type="MySqlDateTimeGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <UseDefault>false</UseDefault>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>12</SeedValue>
+            <SequentialValueTicks>864000000000</SequentialValueTicks>
+            <OffsetFromColumnMaxTimeTicks>10000000</OffsetFromColumnMaxTimeTicks>
+            <OffsetFromColumnMinTimeTicks>10000000</OffsetFromColumnMinTimeTicks>
+            <DateTimeRange>Now</DateTimeRange>
+            <UseOffsetDetails>false</UseOffsetDetails>
+            <OffsetFromColumnMinDays>0</OffsetFromColumnMinDays>
+            <OffsetFromColumnMaxDays>7</OffsetFromColumnMaxDays>
+            <MinDate>1970-01-01T00:00:00</MinDate>
+            <MaxDate>2022-06-08T00:00:00+07:00</MaxDate>
+            <IsRandomizeDate>true</IsRandomizeDate>
+            <MinFraction>0</MinFraction>
+            <MaxFraction>0</MaxFraction>
+            <MaxAllowedFraction>0</MaxAllowedFraction>
+            <IsRandomizeFraction>true</IsRandomizeFraction>
+            <Scale>0</Scale>
+            <Precision>0</Precision>
+            <IsRandomizeTime>true</IsRandomizeTime>
+            <MaxTime>863990000000</MaxTime>
+            <MinTime>10000000</MinTime>
+          </GeneratorOptions>
+          <GeneratorType>MySqlDateTimeGenerator</GeneratorType>
+          <GeneratorName>datetime</GeneratorName>
+          <GeneratorDescription>fill with date and time with fractional seconds values</GeneratorDescription>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="user">
+      <Checked>false</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>50</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="UserId">
+          <Checked>false</Checked>
+          <DataType>INT</DataType>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="UserName">
+          <Checked>false</Checked>
+          <DataType>VARCHAR</DataType>
+          <Length>100</Length>
+        </Column>
+        <Column Name="Password">
+          <Checked>false</Checked>
+          <DataType>VARCHAR</DataType>
+          <Length>20</Length>
+        </Column>
+        <Column Name="Role">
+          <Checked>false</Checked>
+          <DataType>LONGTEXT</DataType>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="chapter">
+      <Checked>true</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>1000</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="ChapterId">
+          <Checked>true</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="MySqlIntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Sequential</ValueDistributionMode>
+            <SeedValue>9</SeedValue>
+            <MinValue>1</MinValue>
+            <MaxValue>9999999</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue />
+          </GeneratorOptions>
+          <GeneratorType>MySqlIntegerGenerator</GeneratorType>
+          <GeneratorName>ID (sequential)</GeneratorName>
+          <GeneratorDescription>1, 2, 3, 4, ..., 9, 10, 11, 12, ...</GeneratorDescription>
+          <GeneratorCategory>Business</GeneratorCategory>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="ChapterCode">
+          <Checked>true</Checked>
+          <DataType>VARCHAR</DataType>
+          <GeneratorOptions xsi:type="MySqlVarcharGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>0</EmptyStringProportion>
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>100</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>9</SeedValue>
+            <MinStringAllowedLenght>1</MinStringAllowedLenght>
+            <MaxStringAllowedLenght>20</MaxStringAllowedLenght>
+            <MinStringLenght>1</MinStringLenght>
+            <MaxStringLenght>20</MaxStringLenght>
+            <StartChar>97</StartChar>
+            <EndChar>122</EndChar>
+            <CodePage>20127</CodePage>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>NULL</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MySqlVarcharGenerator</GeneratorType>
+          <GeneratorName>string</GeneratorName>
+          <GeneratorDescription>fill with character string values</GeneratorDescription>
+          <Length>20</Length>
+        </Column>
+        <Column Name="ChapterName">
+          <Checked>true</Checked>
+          <DataType>VARCHAR</DataType>
+          <GeneratorOptions xsi:type="MySqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>9</SeedValue>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>Chapter [0-9][0-9][0-9]</Expression>
+          </GeneratorOptions>
+          <GeneratorType>MySqlRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>DE Full Name</GeneratorName>
+          <GeneratorDescription>Haike Blücher, Giesbert Möbius, Eitel-Fritz Klotz, Jörg Krüger, Frieder Schultz, ...</GeneratorDescription>
+          <GeneratorCategory>Personal</GeneratorCategory>
+          <Length>255</Length>
+        </Column>
+        <Column Name="Like">
+          <Checked>true</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="MySqlIntegerGeneratorOptions">
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>9</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>0</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>NULL</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MySqlIntegerGenerator</GeneratorType>
+          <GeneratorName>int</GeneratorName>
+          <GeneratorDescription>fill with 32-bit signed integer values</GeneratorDescription>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="ComicId">
+          <Checked>true</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>9</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="Content">
+          <Checked>true</Checked>
+          <DataType>LONGTEXT</DataType>
+          <GeneratorOptions xsi:type="MySqlTwaddleGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>10</SeedValue>
+            <MinParagraphs>1</MinParagraphs>
+            <MaxParagraphs>10</MaxParagraphs>
+            <MinAvgLength>8388607</MinAvgLength>
+            <MaxAvgLength>16777215</MaxAvgLength>
+            <FirstNameFileName>.\FirstNamesMale.txt</FirstNameFileName>
+            <FirstNameFileEncodingCodePage>0</FirstNameFileEncodingCodePage>
+            <LastNameFileEncodingCodePage>0</LastNameFileEncodingCodePage>
+            <LastNameFileName>.\LastNames.txt</LastNameFileName>
+            <IncludeHTMLTags>false</IncludeHTMLTags>
+            <IncludeHeading>false</IncludeHeading>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+          </GeneratorOptions>
+          <GeneratorType>MySqlTwaddleGenerator</GeneratorType>
+          <GeneratorName>Twaddle</GeneratorName>
+          <GeneratorDescription>randomly generated sentences</GeneratorDescription>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="comic-category">
+      <Checked>false</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>50</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="ComicId">
+          <Checked>false</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>15</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="CategoryId">
+          <Checked>false</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>16</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Precision>11</Precision>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="comment">
+      <Checked>false</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>50</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="ComicId">
+          <Checked>false</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>17</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="UserId">
+          <Checked>false</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>18</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="Content">
+          <Checked>false</Checked>
+          <DataType>LONGTEXT</DataType>
+        </Column>
+      </Columns>
+    </Table>
+    <Table Name="subcribe">
+      <Checked>false</Checked>
+      <Settings>
+        <Truncate>true</Truncate>
+        <RowsToGenerate>0</RowsToGenerate>
+        <PopulationDetails>
+          <PopulationType>RowsCount</PopulationType>
+          <RowsCount>50</RowsCount>
+          <LookupProportion>30</LookupProportion>
+          <ProportionOfExistingData>10</ProportionOfExistingData>
+          <TimeTicksToPopulate>100000000</TimeTicksToPopulate>
+        </PopulationDetails>
+      </Settings>
+      <Columns>
+        <Column Name="UserId">
+          <Checked>false</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>19</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Precision>11</Precision>
+        </Column>
+        <Column Name="ComicId">
+          <Checked>false</Checked>
+          <DataType>INT</DataType>
+          <GeneratorOptions xsi:type="ForeignKeyGeneratorOptions">
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>20</SeedValue>
+            <RepeatValues>false</RepeatValues>
+            <FromTimes>1</FromTimes>
+            <ToTimes>10</ToTimes>
+            <ExcludeValues>false</ExcludeValues>
+            <ExclusionValuesPercent>1</ExclusionValuesPercent>
+          </GeneratorOptions>
+          <GeneratorType>ForeignKeyGenerator</GeneratorType>
+          <GeneratorName>Foreign Key (auto assigned)</GeneratorName>
+          <GeneratorDescription>references a column from parent table</GeneratorDescription>
+          <HasForeignKey>true</HasForeignKey>
+          <Precision>11</Precision>
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <SynchronizationOptions xsi:type="DataSyncOptionGroup">
+    <SynchronizationFileName>F:\Workspace\HUST\Thematic\DataGeneration_20220608-2108.sql</SynchronizationFileName>
+    <BulkInsert>false</BulkInsert>
+  </SynchronizationOptions>
+</DataGenDocument>

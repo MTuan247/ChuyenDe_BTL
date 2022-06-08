@@ -8,10 +8,11 @@ using System.Data;
 using MySqlConnector;
 using Dapper;
 using Library.Interfaces;
+using Dapper.Contrib.Extensions;
 
 namespace DL.Base
 {
-    public class BaseDL<TEntity>
+    public class BaseDL<TEntity> where TEntity : class
     {
         ITServiceCollection serviceCollection;
         protected IDbConnection _dbConnection;
@@ -60,6 +61,90 @@ namespace DL.Base
             var entities = _dbConnection.Query<Entity>(sql, commandType: CommandType.Text);
 
             return entities.ToList();
+        }
+
+        /// <summary>
+        /// Hàm lấy bản ghi theo id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public TEntity GetEntityById(int id)
+        {
+            var sql = $"Select * from {className} where {className}Id = @EntityId";
+
+            DynamicParameters parameters = new DynamicParameters();
+
+            parameters.Add("@EntityId", id);
+
+            var entity = _dbConnection.QueryFirstOrDefault<TEntity>(sql, param: parameters, commandType: CommandType.Text);
+
+            return entity;
+        }
+
+        /// <summary>
+        /// Hàm insert bản ghi
+        /// </summary>
+        /// <returns></returns>
+        public int Insert(TEntity entity, IDbTransaction transaction = null)
+        {
+            int rowAffect = (int)_dbConnection.Insert<TEntity>(entity, transaction);
+
+            return rowAffect;
+        }
+
+        /// <summary>
+        /// Hàm insert bản ghi
+        /// </summary>
+        /// <returns></returns>
+        public int Insert<T>(T entity, IDbTransaction transaction = null) where T : class
+        {
+            int rowAffect = (int)_dbConnection.Insert<T>(entity, transaction);
+
+            return rowAffect;
+        }
+
+        /// <summary>
+        /// Hàm update bản ghi
+        /// </summary>
+        /// <returns></returns>
+        public bool Update(TEntity entity, IDbTransaction transaction = null)
+        {
+            bool success = _dbConnection.Update<TEntity>(entity, transaction);
+
+            return success;
+        }
+
+        /// <summary>
+        /// Hàm update bản ghi
+        /// </summary>
+        /// <returns></returns>
+        public bool Update<T>(T entity, IDbTransaction transaction = null) where T : class
+        {
+            bool success = _dbConnection.Update<T>(entity, transaction);
+
+            return success;
+        }
+
+        /// <summary>
+        /// Hàm xoá bản ghi
+        /// </summary>
+        /// <returns></returns>
+        public bool Delete(TEntity entity, IDbTransaction transaction = null)
+        {
+            bool success = _dbConnection.Delete<TEntity>(entity, transaction);
+
+            return success;
+        }
+
+        /// <summary>
+        /// Hàm xoá bản ghi
+        /// </summary>
+        /// <returns></returns>
+        public bool Delete<T>(T entity, IDbTransaction transaction = null) where T : class
+        {
+            bool success = _dbConnection.Delete<T>(entity, transaction);
+
+            return success;
         }
 
         #endregion

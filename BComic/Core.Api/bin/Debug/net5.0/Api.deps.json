@@ -662,6 +662,7 @@
       },
       "Library/1.0.0": {
         "dependencies": {
+          "Dapper.Contrib": "2.0.78",
           "Microsoft.Extensions.Configuration": "6.0.1",
           "Newtonsoft.Json": "13.0.1"
         },

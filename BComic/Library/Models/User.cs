@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace Library.Models
 {
+    [Table("User")]
     public class User : BaseEntity
     {
+        /// <summary>
+        /// Id người dùng
+        /// </summary>
+        [Key]
+        public int UserId { get; set; }
         /// <summary>
         /// Tên tài khoản
         /// </summary>
@@ -17,10 +24,6 @@ namespace Library.Models
         /// Mật khẩu
         /// </summary>
         public string Password { get; set; }
-        /// <summary>
-        /// Chức danh
-        /// </summary>
-        public List<string> Roles { get; set; }
         /// <summary>
         /// Chức danh
         /// </summary>

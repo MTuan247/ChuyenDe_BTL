@@ -15,13 +15,13 @@ using Library.Interfaces;
 
 namespace Api.Controllers
 {
-    public class EmployeeController : BaseController<Employee>
+    public class ChapterController : BaseController<Chapter>
     {
         #region Fields
         #endregion
 
         #region Constructors
-        public EmployeeController(ITServiceCollection serviceCollection) : base(serviceCollection)
+        public ChapterController(ITServiceCollection serviceCollection) : base(serviceCollection)
         {
         }
         #endregion

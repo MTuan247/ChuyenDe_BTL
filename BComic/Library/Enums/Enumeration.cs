@@ -12,23 +12,15 @@ namespace Library.Enums
     }
 
     /// <summary>
-    /// Xác định giới tính
+    /// Xác định trường sort
     /// </summary>
-    public enum Gender
+    public enum SortOrder
     {
-        /// <summary>
-        /// Nam
-        /// </summary>
-        Male = 0,
-
-        /// <summary>
-        /// Nữ
-        /// </summary>
-        Female = 1,
-        /// <summary>
-        /// Khác
-        /// </summary>
-        Other = 2,
+        None = 0,
+        Code = 1,
+        Name = 2,
+        CreatedDate = 3,
+        ModifiedDate = 4,
     }
 
     /// <summary>
