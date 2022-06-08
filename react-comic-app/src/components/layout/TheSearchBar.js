@@ -6,7 +6,7 @@ import "../../css/thesearchbar.css";
 export default function TheSearchBar() {
   return (
     <div id="search-field">
-      <InputGroup className="mb-3 container" id="search-bar">
+      <InputGroup className="mb-3 container-xl" id="search-bar">
         <InputGroup.Text id="search-icon">
           <RiSearchLine />
         </InputGroup.Text>

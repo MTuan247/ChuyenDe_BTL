@@ -1,0 +1,26 @@
+.overview-group {
+    padding: 21px 9px;
+}
+
+.overview-group .overview-info__img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background-size: cover !important;
+    background-position: top center !important;
+    border: 6px solid lightgray;
+    border-radius: 15px;
+}
+
+.overview-group .overview-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.overview-group .overview-content__label {
+    width: 60px;
+}
+
+.overview-group .overview-content__info {
+    display: flex;
+    flex-wrap: wrap;
+}

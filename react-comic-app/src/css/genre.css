@@ -1,0 +1,34 @@
+.genre-group {
+    margin: 15px 10px;
+}
+
+.genre-group .box-title {
+    font-weight: 600;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.genre-group .filter-genre-box,
+.genre-group .filter-sort-box,
+.genre-group .content-box {
+    margin-bottom: 15px;
+    padding: 9px 15px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+}
+
+.genre-group .toggle-btn-group {
+    display: block;
+}
+
+.genre-group .filter-toggle-btn {
+    margin-right: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px !important;
+}
+
+.genre-group .pagination-md .page-item {
+    font-size: 1rem;
+    text-align: center;
+    width: 2.5rem;
+}

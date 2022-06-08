@@ -1,5 +1,5 @@
 import React from "react";
-import { RiEyeLine, RiMedalFill, RiStarFill, RiThumbUpFill } from "react-icons/ri";
+import { RiEyeLine, RiHeart3Fill, RiMedalFill, RiStarFill } from "react-icons/ri";
 import "../../css/rankingbox.css";
 
 export default function RankingBox(props) {
@@ -226,6 +226,29 @@ export default function RankingBox(props) {
     },
   ];
 
+  const demo = {
+    info: {
+      img: "",
+      name: "Tòng Tiền Hữu Tọa Linh Kiếm Sơn",
+      description: "",
+      genre: "",
+    },
+
+    states: {
+      lastUpdate: "2022-12-12",
+      commplete: true,
+      chapter: 234,
+      view: 12947,
+      like: 1221,
+      rate: {
+        ratePoints: 4.5,
+        rateTimes: 1447,
+      },
+    },
+
+    id: "00010",
+  };
+
   const type = props.rankingType;
   let rankingNameArr = [];
   let rankingValueArr = [];
@@ -247,7 +270,7 @@ export default function RankingBox(props) {
     case "like":
       rankingValueArr = novelArr.map(({ states, id }) => (
         <span className="ranking__value" key={id}>
-          <RiThumbUpFill className="color-dodgerblue" /> {states.like}
+          <RiHeart3Fill className="color-heart" /> {states.like}
         </span>
       ));
       break;
