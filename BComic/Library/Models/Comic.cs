@@ -16,6 +16,9 @@ namespace Library.Models
         public int Like { get; set; }
         public int Subcribe { get; set; }
         public int Chapter { get; set; }
+        /// <summary>
+        /// 0 - Chưa hoàn thành, 1 - Hoàn thành
+        /// </summary>
         public int Status { get; set; }
         public string Thumbnail { get; set; }
         public DateTime? CreatedDate { get; set; }

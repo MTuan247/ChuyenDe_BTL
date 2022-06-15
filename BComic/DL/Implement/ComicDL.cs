@@ -139,5 +139,144 @@ namespace DL.Implement
             return comic;
         }
 
+        /// <summary>
+        /// Like truyện
+        /// </summary>
+        /// <param name="comicId"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public bool Like(int comicId, int userId)
+        {
+            var sql = $"SELECT * FROM `Like` l WHERE l.UserId = @UserId AND l.ComicId = @ComicId;";
+
+            DynamicParameters parameters = new DynamicParameters();
+
+            parameters.Add("@ComicId", comicId);
+            parameters.Add("@UserId", userId);
+
+            var query = _dbConnection.Query<Like>(sql, parameters, commandType: CommandType.Text).ToList();
+
+            var rowAffect = 0;
+
+            if (query.Count > 0)
+            {
+                sql = $"UPDATE `like` l SET l.IsLike = 1 WHERE l.UserId = @Userid AND ComicId = @ComicId;" +
+                    $"UPDATE `comic` c SET c.Like = c.Like + 1;";
+
+                rowAffect = _dbConnection.Execute(sql, parameters, commandType: CommandType.Text);
+            }
+            else 
+            {
+                sql = $"INSERT `like` (UserId, ComicId, `IsLike`) VALUES(@UserId, @ComicId, 1);" +
+                    $"UPDATE `comic` c SET c.Like = c.Like + 1;";
+
+                rowAffect = _dbConnection.Execute(sql, parameters, commandType: CommandType.Text);
+            }
+
+
+            return rowAffect > 0;
+            
+
+        }
+
+        /// <summary>
+        /// UnLike truyện
+        /// </summary>
+        /// <param name="comicId"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public bool UnLike(int comicId, int userId)
+        {
+            string sql;
+
+            DynamicParameters parameters = new DynamicParameters();
+
+            parameters.Add("@ComicId", comicId);
+            parameters.Add("@UserId", userId);
+
+            sql = $"UPDATE `like` l SET l.IsLike = 0 WHERE l.UserId = @Userid AND ComicId = @ComicId;" +
+                $"UPDATE `comic` c SET c.Like = c.Like - 1;";
+
+            var rowAffect = _dbConnection.Execute(sql, parameters, commandType: CommandType.Text);
+
+            return rowAffect > 0;
+        }
+
+        /// <summary>
+        /// Like truyện
+        /// </summary>
+        /// <param name="comicId"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public bool Subcribe(int comicId, int userId)
+        {
+            var sql = $"INSERT `subcribe` (UserId, ComicId) VALUES(@UserId, @ComicId);" +
+                $"UPDATE `comic` c SET c.Subcribe = c.Subcribe + 1;";
+
+            DynamicParameters parameters = new DynamicParameters();
+
+            parameters.Add("@ComicId", comicId);
+            parameters.Add("@UserId", userId);
+
+            var rowAffect = 0;
+
+            rowAffect = _dbConnection.Execute(sql, parameters, commandType: CommandType.Text);
+
+            return rowAffect > 0;
+
+        }
+
+        /// <summary>
+        /// UnLike truyện
+        /// </summary>
+        /// <param name="comicId"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public bool UnSubcribe(int comicId, int userId)
+        {
+
+            DynamicParameters parameters = new DynamicParameters();
+
+            parameters.Add("@ComicId", comicId);
+            parameters.Add("@UserId", userId);
+
+            var sql = $"DELETE FROM subcribe WHERE UserId = @UserId AND ComicId = @ComicId;" +
+                    $"UPDATE `comic` c SET c.Subcribe = c.Subcribe - 1;";
+
+            var rowAffect = _dbConnection.Execute(sql, parameters, commandType: CommandType.Text);
+
+            return rowAffect > 0;
+        }
+
+        /// <summary>
+        /// Status truyện
+        /// </summary>
+        /// <param name="comicId"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public object Status(int comicId, int userId)
+        {
+
+            DynamicParameters parameters = new DynamicParameters();
+
+            parameters.Add("@ComicId", comicId);
+            parameters.Add("@UserId", userId);
+
+            var sql = $"SELECT * FROM `Like` l WHERE l.UserId = @UserId AND l.ComicId = @ComicId;";
+
+            var queryLike = _dbConnection.Query<Like>(sql, parameters, commandType: CommandType.Text);
+
+            sql = $"SELECT * FROM Subcribe l WHERE l.UserId = @UserId AND l.ComicId = @ComicId;";
+
+            var querySubcribe = _dbConnection.Query<Like>(sql, parameters, commandType: CommandType.Text);
+
+            var result = new
+            {
+                IsLike = queryLike.Count() > 0 && queryLike.FirstOrDefault().IsLike.GetValueOrDefault(),
+                IsSubcribe = querySubcribe.Count() > 0,
+            };
+
+            return result;
+        }
     }
 }
