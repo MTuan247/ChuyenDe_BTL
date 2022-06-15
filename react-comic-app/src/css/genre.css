@@ -1,5 +1,5 @@
 .genre-group {
-    margin: 15px 10px;
+    margin: 15px 0;
 }
 
 .genre-group .box-title {
@@ -7,21 +7,35 @@
     font-size: 21px;
     margin-bottom: 15px;
 }
-
-.genre-group .filter-genre-box,
-.genre-group .filter-sort-box,
 .genre-group .content-box {
     margin-bottom: 15px;
     padding: 9px 15px;
     border: 1px solid lightgray;
-    border-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background: white;
+}
+
+.genre-group .accordion-item:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.genre-group .accordion-button {
+    font-weight: 600;
+    font-size: 21px;
+    padding: 1rem 15px;
+    color: black !important;
 }
 
 .genre-group .toggle-btn-group {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .genre-group .filter-toggle-btn {
+    white-space: nowrap;
     margin-right: 12px;
     margin-bottom: 12px;
     border-radius: 6px !important;

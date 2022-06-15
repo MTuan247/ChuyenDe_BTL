@@ -12,6 +12,13 @@ a:hover {
   padding: 0 var(--bs-gutter-x, .75rem);
 } */
 
+.body-container {
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid lightgray;
+  padding: 0 var(--bs-gutter-x, .75rem);
+}
+
 .color-react {
   color: #61DBFB;
 }

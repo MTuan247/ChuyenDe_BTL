@@ -19,18 +19,30 @@ function App() {
         <TheIntro />
         <TheSearchBar />
         <div className="container-xl">
-          <div className="body-container">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/Genre" element={<Genre />} />
-              <Route path="/Overview" element={<Overview />} />
-              <Route path="/About" element={<div>About</div>} />
-              <Route path="/Login" element={<Login />} />
-              <Route element={<ProtectedRoute />}>
-                <Route path="/Protected" element={<div>Protected</div>} />
-              </Route>
-            </Routes>
-          </div>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="body-container">
+                  <Home />
+                </div>
+              }
+            />
+            <Route path="/Genre" element={<Genre />} />
+            <Route
+              path="/Overview"
+              element={
+                <div className="body-container">
+                  <Overview />
+                </div>
+              }
+            />
+            <Route path="/About" element={<div>About</div>} />
+            <Route path="/Login" element={<Login />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/Protected" element={<div>Protected</div>} />
+            </Route>
+          </Routes>
         </div>
       </Router>
       <TheFooter />
