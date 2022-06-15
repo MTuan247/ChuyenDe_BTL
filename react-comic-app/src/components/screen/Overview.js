@@ -159,13 +159,15 @@ export default function Overview() {
     ],
   };
 
+  const tokenDescription = novel.info.description.split(/\r?\n/);
+
   return (
     <div className="overview-group">
       <div className="overview-info">
         <div className="overview-left">
           <div className="info-img" style={{ background: `url(${novel.info.img})` }}></div>
           <div>
-            <Button className="overview-btn" variant="outline-secondary">
+            <Button className="overview-btn" variant="outline-dark">
               Đọc ngay
             </Button>
             <Button className="overview-btn" variant="outline-primary">
@@ -233,7 +235,11 @@ export default function Overview() {
               <li className="info-content">
                 <div className="info-content__label">Giới thiệu:</div>
 
-                <p className="info-content__des">{novel.info.description}</p>
+                <div className="info-content__des">
+                  {tokenDescription.map((token) => (
+                    <p>{token}</p>
+                  ))}
+                </div>
               </li>
             </ul>
           </div>

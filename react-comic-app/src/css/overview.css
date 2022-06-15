@@ -16,6 +16,7 @@
     display: flex;
     border-bottom: 1px solid lightgray;
     margin-bottom: 15px;
+    padding-bottom: 6px;
 }
 
 .overview-group .overview-chapters {
@@ -66,7 +67,7 @@
 }
 
 .overview-group .overview-chapters__item {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .overview-group .info-content {
@@ -93,7 +94,7 @@
     overflow-y: auto;
     border: 1px solid lightgray;
     border-radius: 6px;
-    padding: 0px 9px;
+    padding: 3px 9px;
     margin-top: 9px;
     margin-bottom: 0;
 }
