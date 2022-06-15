@@ -1,26 +1,119 @@
 .overview-group {
     padding: 21px 9px;
+    font-size: 15px;
 }
 
-.overview-group .overview-info__img {
-    width: 100%;
-    aspect-ratio: 3/4;
+.overview-group ul {
+    padding: 0;
+    margin: 0;
+}
+
+.overview-group li {
+    margin-bottom: 9px;
+}
+
+.overview-group .overview-info {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 15px;
+}
+
+.overview-group .overview-chapters {
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 15px;
+}
+
+.overview-group .pagination-md .page-item {
+    font-size: 1rem;
+    text-align: center;
+    width: 2.5rem;
+}
+
+.overview-group .overview-left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.overview-group .info-img {
+    min-width: 225px;
+    min-height: 300px;
     background-size: cover !important;
     background-position: top center !important;
     border: 6px solid lightgray;
     border-radius: 15px;
+    margin-bottom: 12px;
 }
 
-.overview-group .overview-content {
+.overview-group .overview-btn {
+    margin-bottom: 5px;
+    width: 110px;
+}
+
+.overview-group div .overview-btn:first-child {
+    margin-right: 5px;
+}
+
+.overview-group .info-detail {
+    width: 100%;
+}
+
+.overview-group .info-detail__title,
+.overview-group .overview-chapters__title {
+    font-weight: 600;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.overview-group .overview-chapters__item {
+    margin-bottom: 12px;
+}
+
+.overview-group .info-content {
+    display: flex;
+    text-align: justify;
+}
+
+.overview-group .info-content:last-child {
+    flex-wrap: wrap;
+}
+
+.overview-group .info-content__label {
+    min-width: 100px;
+    font-weight: 500;
+}
+
+.overview-group .info-content__detail {
     display: flex;
     flex-wrap: wrap;
 }
 
-.overview-group .overview-content__label {
-    width: 60px;
+.overview-group .info-content__des {
+    max-height: 10rem;
+    overflow-y: auto;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    padding: 0px 9px;
+    margin-top: 9px;
+    margin-bottom: 0;
 }
 
-.overview-group .overview-content__info {
-    display: flex;
-    flex-wrap: wrap;
+.overview-group .info-genre {
+    padding-right: 6px;
+}
+
+.overview-group .star-ratings {
+    top: -3px;
+}
+
+@media (max-width: 576px) {
+
+    .overview-group .overview-left {
+        margin: auto;
+        margin-bottom: 15px;
+    }
+
+    .overview-group .overview-info {
+        flex-wrap: wrap;
+    }
 }

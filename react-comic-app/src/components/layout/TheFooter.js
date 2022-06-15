@@ -6,14 +6,14 @@ export default function TheFooter() {
     <footer>
       <div id="footer__logo">
         <strong style={{ fontSize: "45px" }}>
-          <span class="color-react">R</span>
-          <span class="color-dodgerblue">N</span>
+          <span className="color-react">R</span>
+          <span className="color-dodgerblue">N</span>
         </strong>
       </div>
       <div id="footer__text" className="container-xl">
         <strong>
-          <span class="color-react">R</span>
-          <span class="color-dodgerblue">Novel </span>
+          <span className="color-react">R</span>
+          <span className="color-dodgerblue">Novel </span>
         </strong>
         là nền tảng mở dành cho các tác giả và độc giả đam mê truyện chữ, nơi thành viên có thể tự
         do xuất bản các tác phẩm của mình với nhiều chức năng liên tục được cải tiến sẽ mang lại

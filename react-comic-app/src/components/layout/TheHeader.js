@@ -24,12 +24,12 @@ export default function TheHeader() {
 
   return (
     <header>
-      <Navbar bg="light" variant="light" expand="md">
+      <Navbar bg="light" variant="light" expand="lg">
         <div className="container-xl">
           <Navbar.Brand as={Link} to="/">
             <strong style={{ fontSize: "27px" }}>
-              <span class="color-react">R</span>
-              <span class="color-dodgerblue">Novel</span>
+              <span className="color-react">R</span>
+              <span className="color-dodgerblue">Novel</span>
             </strong>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

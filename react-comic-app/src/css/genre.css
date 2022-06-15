@@ -9,7 +9,13 @@
 }
 
 .genre-group .filter-genre-box,
-.genre-group .filter-sort-box,
+.genre-group .filter-sort-box {
+    margin-bottom: 15px;
+    padding: 9px 3px 9px 15px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+}
+
 .genre-group .content-box {
     margin-bottom: 15px;
     padding: 9px 15px;
@@ -18,7 +24,8 @@
 }
 
 .genre-group .toggle-btn-group {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .genre-group .filter-toggle-btn {
