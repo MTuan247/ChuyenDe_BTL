@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row, ToggleButton, ToggleButtonGroup, Pagination } from "react-bootstrap";
+import { Col, Row, Accordion, ToggleButton, ToggleButtonGroup, Pagination } from "react-bootstrap";
 import {} from "react-router-dom";
 import NovelBoxItem from "../reuse-component/NovelBoxItem";
 import "../../css/genre.css";
@@ -502,90 +502,103 @@ export default function Genre() {
 
   return (
     <div className="genre-group">
-      <div className="filter-genre-box">
-        <div className="box-title">Thể loại</div>
-        <ToggleButtonGroup className="toggle-btn-group" type="checkbox">
-          {genreList.map(({ name, id }) => (
-            <ToggleButton
-              className="filter-toggle-btn"
-              id={"genre-toggle-btn-" + id}
-              variant="outline-primary"
-              value={id}
+      <Accordion defaultActiveKey={["0", "1"]} alwaysOpen>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>Thể loại</Accordion.Header>
+          <Accordion.Body>
+            <ToggleButtonGroup className="toggle-btn-group" type="checkbox">
+              {genreList.map(({ name, id }) => (
+                <ToggleButton
+                  className="filter-toggle-btn"
+                  id={"genre-toggle-btn-" + id}
+                  variant="outline-primary"
+                  value={id}
+                >
+                  {name}
+                </ToggleButton>
+              ))}
+            </ToggleButtonGroup>
+          </Accordion.Body>
+        </Accordion.Item>
+
+        <Accordion.Item eventKey="1">
+          <Accordion.Header>Sắp xếp theo</Accordion.Header>
+          <Accordion.Body>
+            <ToggleButtonGroup
+              className="toggle-btn-group"
+              name="sort"
+              type="radio"
+              defaultValue={1}
             >
-              {name}
-            </ToggleButton>
-          ))}
-        </ToggleButtonGroup>
-      </div>
-      <div className="filter-sort-box">
-        <div className="box-title">Sắp xếp theo</div>
-        <ToggleButtonGroup className="toggle-btn-group" name="sort" type="radio" defaultValue={1}>
-          <ToggleButton
-            className="filter-toggle-btn"
-            id={"sort-toggle-btn-1"}
-            variant="outline-primary"
-            value={1}
-          >
-            Mới cập nhật
-          </ToggleButton>
-          <ToggleButton
-            className="filter-toggle-btn"
-            id={"sort-toggle-btn-2"}
-            variant="outline-primary"
-            value={2}
-          >
-            Lượt xem (Tổng)
-          </ToggleButton>
-          <ToggleButton
-            className="filter-toggle-btn"
-            id={"sort-toggle-btn-3"}
-            variant="outline-primary"
-            value={3}
-          >
-            Lượt xem (TB)
-          </ToggleButton>
-          <ToggleButton
-            className="filter-toggle-btn"
-            id={"sort-toggle-btn-4"}
-            variant="outline-primary"
-            value={4}
-          >
-            Điểm đánh giá
-          </ToggleButton>
-          <ToggleButton
-            className="filter-toggle-btn"
-            id={"sort-toggle-btn-5"}
-            variant="outline-primary"
-            value={5}
-          >
-            Lượt yêu thích
-          </ToggleButton>
-          <ToggleButton
-            className="filter-toggle-btn"
-            id={"sort-toggle-btn-6"}
-            variant="outline-primary"
-            value={6}
-          >
-            Lượt theo dõi
-          </ToggleButton>
-          <ToggleButton
-            className="filter-toggle-btn"
-            id={"sort-toggle-btn-7"}
-            variant="outline-primary"
-            value={7}
-          >
-            Số chương
-          </ToggleButton>
-          <ToggleButton
-            className="filter-toggle-btn"
-            id={"sort-toggle-btn-8"}
-            variant="outline-primary"
-            value={8}
-          >
-            Số bình luận
-          </ToggleButton>
-        </ToggleButtonGroup>
-      </div>
+              <ToggleButton
+                className="filter-toggle-btn"
+                id={"sort-toggle-btn-1"}
+                variant="outline-primary"
+                value={1}
+              >
+                Mới cập nhật
+              </ToggleButton>
+              <ToggleButton
+                className="filter-toggle-btn"
+                id={"sort-toggle-btn-2"}
+                variant="outline-primary"
+                value={2}
+              >
+                Lượt xem (Tổng)
+              </ToggleButton>
+              <ToggleButton
+                className="filter-toggle-btn"
+                id={"sort-toggle-btn-3"}
+                variant="outline-primary"
+                value={3}
+              >
+                Lượt xem (TB)
+              </ToggleButton>
+              <ToggleButton
+                className="filter-toggle-btn"
+                id={"sort-toggle-btn-4"}
+                variant="outline-primary"
+                value={4}
+              >
+                Điểm đánh giá
+              </ToggleButton>
+              <ToggleButton
+                className="filter-toggle-btn"
+                id={"sort-toggle-btn-5"}
+                variant="outline-primary"
+                value={5}
+              >
+                Lượt yêu thích
+              </ToggleButton>
+              <ToggleButton
+                className="filter-toggle-btn"
+                id={"sort-toggle-btn-6"}
+                variant="outline-primary"
+                value={6}
+              >
+                Lượt theo dõi
+              </ToggleButton>
+              <ToggleButton
+                className="filter-toggle-btn"
+                id={"sort-toggle-btn-7"}
+                variant="outline-primary"
+                value={7}
+              >
+                Số chương
+              </ToggleButton>
+              <ToggleButton
+                className="filter-toggle-btn"
+                id={"sort-toggle-btn-8"}
+                variant="outline-primary"
+                value={8}
+              >
+                Số bình luận
+              </ToggleButton>
+            </ToggleButtonGroup>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+
       <div className="content-box">
         <div className="box-title">Danh sách truyện</div>
         <div className="box-content">
