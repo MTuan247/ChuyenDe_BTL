@@ -34,6 +34,10 @@ header .active {
     transition: 0.25s linear;
 }
 
+header #basic-navbar-nav {
+    justify-content: center;
+}
+
 header .dropdown-menu.show {
     padding: 0;
     background-color: #F8F9FA;
