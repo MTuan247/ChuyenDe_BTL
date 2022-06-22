@@ -42,6 +42,10 @@ header .dropdown-menu.show {
     width: max-content;
 }
 
+header #user-dropdown + div {
+    width: min-content;
+}
+
 @media (max-width: 768px) {
     header .dropdown-menu.show {
         border: none;
@@ -54,5 +58,9 @@ header .dropdown-menu.show {
     header .dropdown-col {
         border-left: 1px solid lightgray;
         width: 150px;
+    }
+
+    header #user-dropdown + div {
+        border-left: 1px solid lightgray;
     }
 }

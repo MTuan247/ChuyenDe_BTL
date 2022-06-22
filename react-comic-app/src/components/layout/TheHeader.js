@@ -6,6 +6,7 @@ import {
   RiBarChartGroupedLine,
   RiBook3Line,
   RiHome2Line,
+  RiUserLine,
   RiLoginBoxLine,
   RiLogoutBoxLine,
   RiRegisteredLine,
@@ -24,7 +25,7 @@ export default function TheHeader() {
 
   return (
     <header>
-      <Navbar bg="light" variant="light" expand="lg">
+      <Navbar bg="light" variant="light" expand="md">
         <div className="container-xl">
           <Navbar.Brand as={Link} to="/">
             <strong style={{ fontSize: "27px" }}>
@@ -158,26 +159,35 @@ export default function TheHeader() {
                 </div>
               </NavDropdown>
 
-              {user ? (
-                <Nav.Item>
-                  <Nav.Link onClick={logout}>
-                    <RiLogoutBoxLine /> Đăng xuất
-                  </Nav.Link>
-                </Nav.Item>
-              ) : (
-                <>
-                  <NavItem>
-                    <Nav.Link as={NavLink} to="/Login">
-                      <RiLoginBoxLine /> Đăng nhập
+              <NavDropdown
+                title={
+                  <>
+                    <RiUserLine /> Tài khoản{" "}
+                  </>
+                }
+                id="user-dropdown"
+              >
+                {user ? (
+                  <NavDropdown.Item>
+                    <Nav.Link onClick={logout}>
+                      <RiLogoutBoxLine /> Đăng xuất
                     </Nav.Link>
-                  </NavItem>
-                  <NavItem>
-                    <Nav.Link as={NavLink} to="/Signup">
-                      <RiRegisteredLine /> Đăng ký
-                    </Nav.Link>
-                  </NavItem>
-                </>
-              )}
+                  </NavDropdown.Item>
+                ) : (
+                  <>
+                    <NavDropdown.Item>
+                      <Nav.Link as={NavLink} to="/Login">
+                        <RiLoginBoxLine /> Đăng nhập
+                      </Nav.Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Nav.Link as={NavLink} to="/Signup">
+                        <RiRegisteredLine /> Đăng ký
+                      </Nav.Link>
+                    </NavDropdown.Item>
+                  </>
+                )}
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </div>
