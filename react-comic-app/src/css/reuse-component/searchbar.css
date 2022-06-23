@@ -1,0 +1,19 @@
+.search-field {
+    margin-bottom: 45px;
+}
+
+.search-field {
+    margin: 0 auto;
+    padding: 0 var(--bs-gutter-x, .75rem);
+}
+
+.search-field #search-icon,
+.search-field #search-form,
+.search-field #search-btn {
+    padding: 10px 15px;
+}
+
+.search-field #search-btn {
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+}

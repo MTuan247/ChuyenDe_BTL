@@ -21,6 +21,7 @@ namespace Library.Models
         /// </summary>
         public int Status { get; set; }
         public string Thumbnail { get; set; }
+        public string Description { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
 

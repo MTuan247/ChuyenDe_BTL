@@ -4,7 +4,7 @@ import store from "../../redux/store"
 class Auth {
 
   async login(username, password) {
-    let url = PromiseRequest.getServiceUrl("", "Auth")
+    let url = PromiseRequest.getServiceUrl("login", "Auth")
     let param = {
       username,
       password
