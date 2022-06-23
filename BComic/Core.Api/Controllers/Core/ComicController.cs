@@ -48,10 +48,11 @@ namespace Api.Controllers
                 var data = bl.GetComicsFilter(comicSearch, categoryId, pageSize, pageNumber, sortOrder);
                 return Ok(data);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                serviceResult.ExceptionHandle(ex);
+                return StatusCode(500, serviceResult);
             }
         }
 
