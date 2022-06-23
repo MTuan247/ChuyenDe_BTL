@@ -11,8 +11,15 @@ PromiseRequest.send = (url, data, config = { method: "post" },) => {
 
   let customUrl = url;
   if (config.method.toLowerCase() === "get") {
+    let i = 0;
     for(let key in data) {
-      customUrl += `?${key}=${data[key]}`;
+      if (i === 0) {
+        customUrl += '?'
+      } else {
+        customUrl += '&'
+      }
+      customUrl += `${key}=${data[key]}`;
+      i++;
     }
   }
 

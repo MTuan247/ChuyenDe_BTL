@@ -3,6 +3,7 @@ import Home from "./components/screen/Home";
 import Genre from "./components/screen/Genre";
 import Overview from "./components/screen/Overview";
 import Login from "./components/screen/Login";
+import Admin from "./components/screen/Admin";
 import TheHeader from "./components/layout/TheHeader";
 import TheIntro from "./components/layout/TheIntro";
 
@@ -11,16 +12,19 @@ import { ProtectedRoute } from "./plugin/ProtectedRoute";
 import TheFooter from "./components/layout/TheFooter";
 import TheSearchBar from "./components/layout/TheSearchBar";
 
+import './css/layout/app.css'
+
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="Novel">
         <TheHeader />
         <TheIntro />
         <TheSearchBar />
         <div className="container-xl">
           <Routes>
             <Route
+              index
               path="/"
               element={
                 <div className="body-container">
@@ -39,13 +43,18 @@ function App() {
             />
             <Route path="/About" element={<div>About</div>} />
             <Route path="/Login" element={<Login />} />
-            <Route element={<ProtectedRoute />}>
-              <Route path="/Protected" element={<div>Protected</div>} />
-            </Route>
           </Routes>
         </div>
+        <TheFooter />
       </Router>
-      <TheFooter />
+      <Router basename="Admin">
+        <TheHeader />
+        <Routes>
+          <Route element={<ProtectedRoute />}>
+            <Route index path="/" element={<Admin />} />
+          </Route>
+        </Routes>
+      </Router>
     </>
   );
 }
