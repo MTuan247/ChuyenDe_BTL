@@ -32,3 +32,20 @@ F:\Workspace\HUST\Thematic\BComic\BL\obj\Debug\net5.0\BL.csproj.CopyComplete
 F:\Workspace\HUST\Thematic\BComic\BL\obj\Debug\net5.0\BL.dll
 F:\Workspace\HUST\Thematic\BComic\BL\obj\Debug\net5.0\ref\BL.dll
 F:\Workspace\HUST\Thematic\BComic\BL\obj\Debug\net5.0\BL.pdb
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\bin\Debug\net5.0\BL.deps.json
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\bin\Debug\net5.0\BL.dll
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\bin\Debug\net5.0\BL.pdb
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\bin\Debug\net5.0\DL.dll
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\bin\Debug\net5.0\Library.dll
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\bin\Debug\net5.0\DL.pdb
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\bin\Debug\net5.0\Library.pdb
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\obj\Debug\net5.0\BL.csproj.AssemblyReference.cache
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\obj\Debug\net5.0\BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\obj\Debug\net5.0\BL.AssemblyInfoInputs.cache
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\obj\Debug\net5.0\BL.AssemblyInfo.cs
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\obj\Debug\net5.0\BL.csproj.CoreCompileInputs.cache
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\obj\Debug\net5.0\BL.csproj.CopyComplete
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\obj\Debug\net5.0\BL.dll
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\obj\Debug\net5.0\refint\BL.dll
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\obj\Debug\net5.0\BL.pdb
+C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\BL\obj\Debug\net5.0\ref\BL.dll

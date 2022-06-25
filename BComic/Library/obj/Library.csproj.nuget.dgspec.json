@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Workspace\\HUST\\Thematic\\BComic\\Library\\Library.csproj": {}
+    "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {}
   },
   "projects": {
-    "F:\\Workspace\\HUST\\Thematic\\BComic\\Library\\Library.csproj": {
+    "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Workspace\\HUST\\Thematic\\BComic\\Library\\Library.csproj",
+        "projectUniqueName": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "F:\\Workspace\\HUST\\Thematic\\BComic\\Library\\Library.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "F:\\Workspace\\HUST\\Thematic\\BComic\\Library\\obj\\",
+        "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj",
+        "packagesPath": "C:\\Users\\MSI PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MSI PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

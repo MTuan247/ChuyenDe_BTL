@@ -306,19 +306,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\MSI PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Workspace\\HUST\\Thematic\\BComic\\DL\\DL.csproj",
+      "projectUniqueName": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\DL\\DL.csproj",
       "projectName": "DL",
-      "projectPath": "F:\\Workspace\\HUST\\Thematic\\BComic\\DL\\DL.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "F:\\Workspace\\HUST\\Thematic\\BComic\\DL\\obj\\",
+      "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\DL\\DL.csproj",
+      "packagesPath": "C:\\Users\\MSI PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\DL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MSI PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -332,8 +332,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "F:\\Workspace\\HUST\\Thematic\\BComic\\Library\\Library.csproj": {
-              "projectPath": "F:\\Workspace\\HUST\\Thematic\\BComic\\Library\\Library.csproj"
+            "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {
+              "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj"
             }
           }
         }
@@ -380,7 +380,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

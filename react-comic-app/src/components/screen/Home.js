@@ -14,21 +14,21 @@ export default function Home() {
   return (
     <Row>
       <Col xs="12" lg="8" id="home-content">
-        <NovelBox name="Truyện đề cử" novelType="suggest" />
-        <NovelBox name="Mới cập nhật" novelType="newest-update" />
-        <NovelBox name="Xem nhiều nhất" novelType="most-view" />
-        <NovelBox name="Đã hoàn thành" novelType="complete" />
+        <NovelBox name="Truyện đề cử" sort="like" />
+        <NovelBox name="Mới cập nhật" sort="modified-date" />
+        <NovelBox name="Xem nhiều nhất" sort="view" />
+        <NovelBox name="Đã hoàn thành" sort="status" />
       </Col>
       <Col xs="12" lg="4" id="home-ranking">
         <Row>
           <Col className="col-rank" sm="12" md="4" lg="12">
-            <RankingBox name="Top lượt xem" rankingType="view" />
+            <RankingBox name="Top lượt xem" sort="view" />
           </Col>
           <Col className="col-rank" sm="12" md="4" lg="12">
-            <RankingBox name="Top yêu thích" rankingType="like" />
+            <RankingBox name="Top yêu thích" sort="like" />
           </Col>
           <Col className="col-rank" sm="12" md="4" lg="12">
-            <RankingBox name="Top đánh giá" rankingType="rate" />
+            <RankingBox name="Theo dõi" sort="subcribe" />
           </Col>
         </Row>
       </Col>

@@ -1,283 +1,60 @@
-import React from "react";
-import { RiEyeLine, RiHeart3Fill, RiMedalFill, RiStarFill } from "react-icons/ri";
+import React, { useEffect, useState } from "react";
+import { RiEyeLine, RiHeart3Fill, RiMedalFill, RiBookmark3Fill } from "react-icons/ri";
+import axios from "axios";
 import "../../css/rankingbox.css";
 
 export default function RankingBox(props) {
-  const novelArr = [
-    {
-      info: {
-        img: "",
-        name: "Nhất Thống Thiên Hạ",
-        description: "",
-        genre: "",
-      },
+  const [novels, setNovels] = useState([]);
 
-      states: {
-        lastUpdate: "2022-12-12",
-        commplete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await axios.get("https://localhost:44311/api/Comic");
 
-      id: "00001",
-    },
-    {
-      info: {
-        img: "",
-        name: "Tiến Hóa Tại Vô Hạn Thế Giới",
-        description: "",
-        genre: "",
-      },
+      let dataLong = data.data;
 
-      states: {
-        lastUpdate: "2022-12-12",
-        commplete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
+      if (props.sort === "like") {
+        dataLong = [...dataLong].sort((a, b) => b.Like - a.Like);
+      } else if (props.sort === "view") {
+        dataLong = [...dataLong].sort((a, b) => b.Subcribe - a.Subcribe);
+      } else if (props.sort === "follow") {
+        dataLong = [...dataLong].sort((a, b) => b.Subcribe - a.Subcribe);
+      }
 
-      id: "00002",
-    },
-    {
-      info: {
-        img: "",
-        name: "Hùng Ca Đại Việt",
-        description: "",
-        genre: "",
-      },
+      const dataShort = dataLong.slice(0, 10);
 
-      states: {
-        lastUpdate: "2022-12-12",
-        commplete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
+      setNovels(dataShort);
+    };
 
-      id: "00003",
-    },
-    {
-      info: {
-        img: "",
-        name: "Nguyên Tố Đại Lục",
-        description: "",
-        genre: "",
-      },
+    fetchData().catch(console.error);
+  }, []);
 
-      states: {
-        lastUpdate: "2022-12-12",
-        commplete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
+  let rankingNameArr, rankingValueArr;
 
-      id: "00004",
-    },
-    {
-      info: {
-        img: "",
-        name: "Ma Thần Thiên Quân",
-        description: "",
-        genre: "",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        commplete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00005",
-    },
-    {
-      info: {
-        img: "",
-        name: "Nhất Kiếp Tiên Phàm",
-        description: "",
-        genre: "",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        commplete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00006",
-    },
-    {
-      info: {
-        img: "",
-        name: "Đông Ly Trần Kiếp Diệt",
-        description: "",
-        genre: "",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        commplete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00007",
-    },
-    {
-      info: {
-        img: "",
-        name: "Huyền Lục",
-        description: "",
-        genre: "",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        commplete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00008",
-    },
-    {
-      info: {
-        img: "",
-        name: "Tối Cường Trang Bức Đả Kiểm Hệ Thống",
-        description: "",
-        genre: "",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        commplete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00009",
-    },
-    {
-      info: {
-        img: "",
-        name: "Tòng Tiền Hữu Tọa Linh Kiếm Sơn",
-        description: "",
-        genre: "",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        commplete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00010",
-    },
-  ];
-
-  const demo = {
-    info: {
-      img: "",
-      name: "Tòng Tiền Hữu Tọa Linh Kiếm Sơn",
-      description: "",
-      genre: "",
-    },
-
-    states: {
-      lastUpdate: "2022-12-12",
-      commplete: true,
-      chapter: 234,
-      view: 12947,
-      like: 1221,
-      rate: {
-        ratePoints: 4.5,
-        rateTimes: 1447,
-      },
-    },
-
-    id: "00010",
-  };
-
-  const type = props.rankingType;
-  let rankingNameArr = [];
-  let rankingValueArr = [];
-
-  rankingNameArr = novelArr.map(({ info, id }) => (
-    <a className="ranking__name line-1" href="/" key={id}>
-      {info.name}
+  rankingNameArr = novels.map(({ ComicName, ComicId }) => (
+    <a className="ranking__name line-1" href="/" key={ComicId}>
+      {ComicName}
     </a>
   ));
 
-  switch (type) {
+  switch (props.sort) {
     case "view":
-      rankingValueArr = novelArr.map(({ states, id }) => (
-        <span className="ranking__value" key={id}>
-          <RiEyeLine /> {states.view}
+      rankingValueArr = novels.map(({ Subcribe, ComicId }) => (
+        <span className="ranking__value" key={ComicId}>
+          <RiEyeLine /> {Subcribe}
         </span>
       ));
       break;
     case "like":
-      rankingValueArr = novelArr.map(({ states, id }) => (
-        <span className="ranking__value" key={id}>
-          <RiHeart3Fill className="color-heart" /> {states.like}
+      rankingValueArr = novels.map(({ Like, ComicId }) => (
+        <span className="ranking__value" key={ComicId}>
+          <RiHeart3Fill className="color-heart" /> {Like}
         </span>
       ));
       break;
-    case "rate":
-      rankingValueArr = novelArr.map(({ states, id }) => (
-        <span className="ranking__value" key={id}>
-          <RiStarFill className="color-gold" /> {states.rate.ratePoints}
+    case "subcribe":
+      rankingValueArr = novels.map(({ Subcribe, ComicId }) => (
+        <span className="ranking__value" key={ComicId}>
+          <RiBookmark3Fill className="color-dodgerblue" /> {Subcribe}
         </span>
       ));
       break;
