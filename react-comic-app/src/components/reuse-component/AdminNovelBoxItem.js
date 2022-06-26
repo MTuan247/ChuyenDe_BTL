@@ -19,7 +19,7 @@ export default function AdminNovelBoxItem(props) {
         </div>
 
         <div className="nb-item-right">
-          <div onClick={props.clickItem} className="nb-item__title line-1">
+          <div onClick={() => props.clickItem(props.info)} className="nb-item__title line-1">
             {props.info.ComicName}
           </div>
           <p className="nb-item__description line-2">{props.info.Description}</p>
