@@ -9,18 +9,28 @@ export default function Modal({
   height = '80%', 
   width = 800, 
   isShow, 
-  title, 
   close = () => {},
   save = () => {},
-  cancel = () => {}
+  cancel = async () => {},
+  modalTitle = "Thêm mới"
 }) {
+
+  const handleCancel = () => {
+    close();
+    cancel();
+  }
+
+  const handleSave = (...arg) => {
+    save(...arg);
+    close();
+  }
 
   return ReactDOM.createPortal(
     <div style={{display: isShow ? '' : 'none'}}  className="modal-overlay">
       <div style={{height: height, width: width}} className="modal-popup">
         <div className="popup__header">
           <div className="header-left">
-            {title}
+            {modalTitle}
           </div>
           <div className="header-right">
             <AiOutlineClose className="pointer" onClick={close} size={20} />
@@ -32,8 +42,8 @@ export default function Modal({
         <div className="popup__footer">
           <div className="footer-left"></div>
           <div className="footer-right">
-            <Button onClick={save} variant="secondary">Huỷ</Button>
-            <Button onClick={cancel} variant="primary">Lưu</Button>
+            <Button onClick={handleCancel} variant="secondary">Huỷ</Button>
+            <Button onClick={handleSave} variant="primary">Lưu</Button>
           </div>
         </div>
       </div>
