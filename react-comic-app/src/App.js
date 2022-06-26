@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import Home from "./components/screen/Home";
 import Genre from "./components/screen/Genre";
@@ -53,6 +54,7 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route index path="/" element={<Admin />} />
           </Route>
+          <Route path="/Login" element={<Login />} />
         </Routes>
       </Router>
     </>

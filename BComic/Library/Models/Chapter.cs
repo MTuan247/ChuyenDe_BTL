@@ -10,7 +10,7 @@ namespace Library.Models
     public class Chapter
     {
         [Key]
-        public int ChapterId { get; set; }
+        public int? ChapterId { get; set; }
         public string ChapterCode { get; set; }
         public string ChapterName { get; set; }
         public int Like { get; set; }
