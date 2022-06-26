@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace Library.Models
 {
+    [Table("Comic")]
     public class Comic
     {
-        [Key]
-        public int ComicId { get; set; }
+        [ExplicitKey]
+        public int? ComicId { get; set; }
         public string ComicCode { get; set; }
         public string ComicName { get; set; }
         public int Like { get; set; }

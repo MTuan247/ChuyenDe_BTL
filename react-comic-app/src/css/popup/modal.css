@@ -17,6 +17,7 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
+  border-radius: 2px;
 }
 
 .modal-popup .popup__header {
@@ -26,8 +27,16 @@
   justify-content: space-between;
 }
 
+.modal-popup .header-left {
+  font-weight: 600;
+  font-size: 24px;
+  margin-left: 4px;
+}
+
 .modal-popup .popup__content {
   flex: 1;
+  overflow: auto;
+  padding: 8px;
 }
 
 .modal-popup .popup__footer {
