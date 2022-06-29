@@ -43,3 +43,18 @@ C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\DL\obj\Debug\n
 C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\refint\DL.dll
 C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\DL.pdb
 C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\ref\DL.dll
+G:\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\DL.dll
+G:\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\DL.pdb
+G:\ChuyenDe_BTL\BComic\DL\bin\Debug\net5.0\DL.deps.json
+G:\ChuyenDe_BTL\BComic\DL\bin\Debug\net5.0\DL.dll
+G:\ChuyenDe_BTL\BComic\DL\bin\Debug\net5.0\DL.pdb
+G:\ChuyenDe_BTL\BComic\DL\bin\Debug\net5.0\Library.dll
+G:\ChuyenDe_BTL\BComic\DL\bin\Debug\net5.0\Library.pdb
+G:\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\DL.csproj.AssemblyReference.cache
+G:\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\DL.GeneratedMSBuildEditorConfig.editorconfig
+G:\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\DL.AssemblyInfoInputs.cache
+G:\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\DL.AssemblyInfo.cs
+G:\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\DL.csproj.CoreCompileInputs.cache
+G:\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\DL.csproj.CopyComplete
+G:\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\refint\DL.dll
+G:\ChuyenDe_BTL\BComic\DL\obj\Debug\net5.0\ref\DL.dll

@@ -40,3 +40,17 @@ C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\Library\obj\De
 C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\refint\Library.dll
 C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\Library.pdb
 C:\Users\MSI PC\OneDrive\Tài liệu\GitHub\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\ref\Library.dll
+G:\ChuyenDe_BTL\BComic\Library\bin\Debug\net5.0\Library.deps.json
+G:\ChuyenDe_BTL\BComic\Library\bin\Debug\net5.0\Library.dll
+G:\ChuyenDe_BTL\BComic\Library\bin\Debug\net5.0\Library.pdb
+G:\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\Library.csproj.AssemblyReference.cache
+G:\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\Library.Properties.Resources.resources
+G:\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\Library.csproj.GenerateResource.cache
+G:\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\Library.GeneratedMSBuildEditorConfig.editorconfig
+G:\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\Library.AssemblyInfoInputs.cache
+G:\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\Library.AssemblyInfo.cs
+G:\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\Library.csproj.CoreCompileInputs.cache
+G:\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\Library.dll
+G:\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\refint\Library.dll
+G:\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\Library.pdb
+G:\ChuyenDe_BTL\BComic\Library\obj\Debug\net5.0\ref\Library.dll

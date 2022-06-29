@@ -9,6 +9,7 @@ import { Constant } from "./resources";
 import { Enumeration } from "./resources";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-widgets/styles.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

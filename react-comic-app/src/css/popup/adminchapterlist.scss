@@ -1,0 +1,60 @@
+.admin-chapter-list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+
+    &::-webkit-scrollbar-track {
+        margin-top: 73px;
+    }
+
+    .admin-novel-box__head {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        position: sticky;
+        top: 0px;
+        background-color: #fff;
+    }
+    
+    .admin-novel-box__head__title {
+        font-weight: 600;
+        font-size: 21px;
+    }
+    
+    .admin-novel-box__head__link {
+        align-self: center;
+    }
+
+    .admin-novel-box__body {
+        flex: 1;
+    }
+
+    table {
+        height: 100%;
+
+        thead {
+            position: sticky;
+            top: 46px;
+            left: 0;
+            background-color: #fff;
+        }
+
+        td {
+            line-height: 24px;
+            .table-action {
+                height: 24px;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                svg {
+                    margin: 4px;
+                }
+            }
+        }
+    }
+}
+
+

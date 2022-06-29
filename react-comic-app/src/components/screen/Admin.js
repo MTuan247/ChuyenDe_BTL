@@ -34,6 +34,7 @@ export default function Admin() {
   const [totalPage, setTotalPage] = useState();
   const [totalRecord, setTotalRecord] = useState();
   const [model, setModel] = useState({...defaultModel});
+  const [modalTitle, setModalTitle] = useState("");
   const [mode, setMode] = useState("view");
 
   const [showPopup, setShowPopup] = useState(false);
@@ -76,6 +77,7 @@ export default function Admin() {
     setShowPopup(true);
     setModel(model);
     setMode("update");
+    setModalTitle(model.ComicName);
   }
 
   const deleteItem = (model) => {
@@ -91,6 +93,7 @@ export default function Admin() {
     setShowPopup(true);
     setModel({...defaultModel});
     setMode("add");
+    setModalTitle(null);
   }
 
   const updateValue = (field, value) => {
@@ -109,13 +112,19 @@ export default function Admin() {
     });
   }
 
+  const showChapterListPopup = (model) => {
+    setModel(model);
+    setShowChapterList(true);
+    setModalTitle(model.ComicName);
+  }
+
   return (
     <div className="container-xl admin-screen">
       <SearchBar value={searchQuery} onChange={changeSearch} />
       <div className="body-container">
-        <AdminNovelBox chapterList={() => setShowChapterList(true)} deleteItem={deleteItem} add={add} clickItem={clickItem} name="Danh sách truyện" list={novelList} />
+        <AdminNovelBox chapterList={showChapterListPopup} deleteItem={deleteItem} add={add} clickItem={clickItem} name="Danh sách truyện" list={novelList} />
         <Pagination pageNumber={pageNumber} totalPage={totalPage} onChange={(page) => setPageNumber(page)} />
-        <Modal modalTitle={model.ComicName || 'Thêm mới'} save={handleSave} close={() => setShowPopup(false)} isShow={showPopup}>
+        <Modal modalTitle={modalTitle || 'Thêm mới'} save={handleSave} close={() => setShowPopup(false)} isShow={showPopup}>
           {
             showPopup ? (
               <AdminNovelDetail update={updateValue} model={model} />
@@ -124,7 +133,7 @@ export default function Admin() {
             )
           }
         </Modal>
-        <Modal modalTitle={model.ComicName} close={() => setShowChapterList(false)} isShow={showChapterList}>
+        <Modal modalTitle={modalTitle} close={() => setShowChapterList(false)} isShow={showChapterList}>
           {
             showChapterList ? (
               <AdminChapterList model={model} />

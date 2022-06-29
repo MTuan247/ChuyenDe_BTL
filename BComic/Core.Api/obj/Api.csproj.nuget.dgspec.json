@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Core.Api\\Api.csproj": {}
+    "G:\\ChuyenDe_BTL\\BComic\\Core.Api\\Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\BL\\BL.csproj": {
+    "G:\\ChuyenDe_BTL\\BComic\\BL\\BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\BL\\BL.csproj",
+        "projectUniqueName": "G:\\ChuyenDe_BTL\\BComic\\BL\\BL.csproj",
         "projectName": "BL",
-        "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\BL\\BL.csproj",
-        "packagesPath": "C:\\Users\\MSI PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\BL\\obj\\",
+        "projectPath": "G:\\ChuyenDe_BTL\\BComic\\BL\\BL.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "G:\\ChuyenDe_BTL\\BComic\\BL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MSI PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\DL\\DL.csproj": {
-                "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\DL\\DL.csproj"
+              "G:\\ChuyenDe_BTL\\BComic\\DL\\DL.csproj": {
+                "projectPath": "G:\\ChuyenDe_BTL\\BComic\\DL\\DL.csproj"
               },
-              "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {
-                "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj"
+              "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {
+                "projectPath": "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj"
               }
             }
           }
@@ -62,6 +62,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -71,17 +85,17 @@
         }
       }
     },
-    "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Core.Api\\Api.csproj": {
+    "G:\\ChuyenDe_BTL\\BComic\\Core.Api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Core.Api\\Api.csproj",
+        "projectUniqueName": "G:\\ChuyenDe_BTL\\BComic\\Core.Api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Core.Api\\Api.csproj",
-        "packagesPath": "C:\\Users\\MSI PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Core.Api\\obj\\",
+        "projectPath": "G:\\ChuyenDe_BTL\\BComic\\Core.Api\\Api.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "G:\\ChuyenDe_BTL\\BComic\\Core.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MSI PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -95,11 +109,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\BL\\BL.csproj": {
-                "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\BL\\BL.csproj"
+              "G:\\ChuyenDe_BTL\\BComic\\BL\\BL.csproj": {
+                "projectPath": "G:\\ChuyenDe_BTL\\BComic\\BL\\BL.csproj"
               },
-              "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {
-                "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj"
+              "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {
+                "projectPath": "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj"
               }
             }
           }
@@ -137,6 +151,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -149,17 +181,17 @@
         }
       }
     },
-    "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\DL\\DL.csproj": {
+    "G:\\ChuyenDe_BTL\\BComic\\DL\\DL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\DL\\DL.csproj",
+        "projectUniqueName": "G:\\ChuyenDe_BTL\\BComic\\DL\\DL.csproj",
         "projectName": "DL",
-        "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\DL\\DL.csproj",
-        "packagesPath": "C:\\Users\\MSI PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\DL\\obj\\",
+        "projectPath": "G:\\ChuyenDe_BTL\\BComic\\DL\\DL.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "G:\\ChuyenDe_BTL\\BComic\\DL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MSI PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -173,8 +205,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {
-                "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj"
+              "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {
+                "projectPath": "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj"
               }
             }
           }
@@ -216,6 +248,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -225,17 +271,17 @@
         }
       }
     },
-    "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {
+    "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj",
+        "projectUniqueName": "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj",
-        "packagesPath": "C:\\Users\\MSI PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\obj\\",
+        "projectPath": "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "G:\\ChuyenDe_BTL\\BComic\\Library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MSI PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -284,6 +330,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

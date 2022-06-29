@@ -1,3 +1,7 @@
+.admin-screen * {
+  box-sizing: border-box;
+}
+
 .admin-screen .search-field {
   margin-top: 8px;
 }
