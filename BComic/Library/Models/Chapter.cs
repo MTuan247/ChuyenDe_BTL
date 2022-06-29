@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Models
 {
+    [Table("Chapter")]
     public class Chapter
     {
         [ExplicitKey]
