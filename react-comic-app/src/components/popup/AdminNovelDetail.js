@@ -1,18 +1,28 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../../css/popup/adminnoveldetail.scss";
-import { PromiseRequest } from "../../utils";
+import Combobox from "react-widgets/Combobox";
 import { Form, FormControl } from "react-bootstrap";
 import moment from 'moment';
+import { PromiseRequest } from "../../utils";
 
 export default function AdminNovelDetail({ model, update = () => {} }) {
 
-  const thumbnailControl = useRef();
-  
-  const [render, reRender] = useState(0);
+  const thumbnailControl = useRef(null);
 
-  const handleRerender = () => {
-    reRender(render+1);
+  const [categories, setCategories] = useState([])
+
+  const loadCategory = (param) => {
+    let url = PromiseRequest.getServiceUrl("", "Category");
+    PromiseRequest.send(url, {
+      sortOrder: 2,
+    }, { method: "get" }).then(res => {
+      setCategories(res.data);
+    })
   }
+
+  useEffect(() => {
+    loadCategory();
+  }, [])
 
   const handleChange = (e, field) => {
     update(field, e.target.value);
@@ -63,6 +73,19 @@ export default function AdminNovelDetail({ model, update = () => {} }) {
               <option value="0">Chưa hoàn thành </option>
               <option value="1">Hoàn thành</option>
             </Form.Select>
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label>Thể loại</Form.Label>
+            <Combobox 
+              value={model.CategoryId}
+              data={categories}
+              dataKey='CategoryId'
+              textField='CategoryName'
+              onChange={(value) => update('CategoryId', value.CategoryId)}
+              placeholder="Thể loại truyện"
+              hideEmptyPopup
+            />
           </Form.Group>
 
           <Form.Group>
