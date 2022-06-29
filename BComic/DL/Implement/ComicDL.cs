@@ -87,7 +87,7 @@ namespace DL.Implement
 
             parameters.Add("@ComicId", comicId);
 
-            var chapters = _dbConnection.Query<ChapterDTO>(sql, parameters, commandType: CommandType.Text) as List<ComicDTO>;
+            var chapters = _dbConnection.Query<ChapterDTO>(sql, parameters, commandType: CommandType.Text) as List<ChapterDTO>;
 
             var totalRecord = chapters.Count;
 

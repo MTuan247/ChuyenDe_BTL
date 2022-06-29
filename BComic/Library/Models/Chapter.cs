@@ -9,7 +9,7 @@ namespace Library.Models
 {
     public class Chapter
     {
-        [Key]
+        [ExplicitKey]
         public int? ChapterId { get; set; }
         public string ChapterCode { get; set; }
         public string ChapterName { get; set; }
