@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { RiEyeLine, RiHeart3Fill, RiMedalFill, RiBookmark3Fill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "../../css/rankingbox.css";
 
@@ -31,9 +32,9 @@ export default function RankingBox(props) {
   let rankingNameArr, rankingValueArr;
 
   rankingNameArr = novels.map(({ ComicName, ComicId }) => (
-    <a className="ranking__name line-1" href="/" key={ComicId}>
+    <Link className="ranking__name line-1" to={"/Overview/" + ComicId} key={ComicId}>
       {ComicName}
-    </a>
+    </Link>
   ));
 
   switch (props.sort) {
@@ -67,7 +68,7 @@ export default function RankingBox(props) {
       <div className="ranking-box__head">
         <div className="ranking-box__head__title">{props.name}</div>
         <div className="ranking-box__head__link">
-          <a href="/">Xem tất cả</a>
+          <Link to="Genre">Xem tất cả</Link>
         </div>
       </div>
       <div className="ranking-box__body">

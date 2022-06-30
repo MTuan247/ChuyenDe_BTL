@@ -1,0 +1,35 @@
+.comic-view .prev-next-group {
+    width: 100%;
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.comic-view .btn {
+    width: 100%;
+}
+
+.comic-view .prev-btn {
+    border-radius: 5px 0 0 5px;
+}
+
+.comic-view .next-btn {
+    border-radius: 0 5px 5px 0;
+}
+
+.comic-view .comic-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.comic-view .chapter-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.comic-view .chapter-content {
+    text-align: justify;
+    font-size: 18px;
+}

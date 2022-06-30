@@ -50,6 +50,10 @@ a:hover {
   overflow: hidden;
 }
 
+.pagination .active .page-link {
+  color: white !important;
+}
+
 .line-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;

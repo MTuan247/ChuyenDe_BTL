@@ -1,504 +1,102 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Row, Accordion, ToggleButton, ToggleButtonGroup, Pagination } from "react-bootstrap";
 import {} from "react-router-dom";
+import axios from "axios";
 import NovelBoxItem from "../reuse-component/NovelBoxItem";
 import "../../css/genre.css";
 
 export default function Genre() {
+  const novelsPerPage = 24;
+
   const genreList = [
     {
+      id: 0,
+      name: "Tất cả",
+    },
+    {
       id: 1,
-      name: "Bách hợp",
+      name: "Huyền huyễn",
     },
     {
       id: 2,
-      name: "Cổ đại",
+      name: "Tình cảm",
     },
     {
       id: 3,
-      name: "Cung đấu",
+      name: "Phiêu lưu",
     },
     {
       id: 4,
-      name: "Đam mỹ",
+      name: "Hành động",
     },
     {
       id: 5,
-      name: "Đô thị",
-    },
-    {
-      id: 6,
-      name: "Hệ thống",
-    },
-    {
-      id: 7,
-      name: "Kiếm hiệp",
-    },
-    {
-      id: 8,
-      name: "Lịch sử",
-    },
-    {
-      id: 9,
-      name: "Light novel",
-    },
-    {
-      id: 10,
-      name: "Ngôn tình",
-    },
-    {
-      id: 11,
-      name: "Tiên hiệp",
-    },
-    {
-      id: 12,
-      name: "Trọng sinh",
-    },
-    {
-      id: 13,
-      name: "Truyện ngắn",
-    },
-    {
-      id: 14,
-      name: "Tu tiên",
-    },
-    {
-      id: 15,
-      name: "Xuyên không",
+      name: "Kịch tính",
     },
   ];
 
-  const novelArr = [
-    {
-      info: {
-        img: "https://i.imgur.com/F4YrlR5.jpg",
-        name: "Nhất Thống Thiên Hạ",
-        description:
-          "Một ông trùm xã hội đen khi về làm vua thời cổ đại sẽ gặp những cảnh ngộ ra sao? Một đất nước loạn lạc khắp nơi có được bình định hay không? Một đế chế hùng mạnh sẽ được dựng nên như thế nào? Một hôn quân, một bạo chúa, hay một minh quân sẽ xuất thế?",
-        genre: "Tu tiên",
-      },
+  const [novels, setNovels] = useState({
+    totalTodo: [],
+    currentTodo: [],
+  });
 
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
+  const [pages, setPages] = useState({
+    currentPage: 1,
+    indexLast: 24,
+    indexFirst: 0,
+  });
 
-      id: "00001",
-    },
+  const [pageList, setPageList] = useState([]);
 
-    {
-      info: {
-        img: "https://i.imgur.com/BhKGqHl.jpg",
-        name: "Tiến Hóa Tại Vô Hạn Thế Giới",
-        description:
-          "Quá khứ như một bàn tay vô hình bóp lấy cổ hắn, dìm hắn xuống nước, ép cho hắn không thở nổi. Nhưng hắn lại chỉ có thể mang theo thống khổ và tuyệt vọng mà sống, giống một kẻ mãi mãi lạc lối trong bóng đêm, không tìm thấy được ánh sáng.",
-        genre: "Chuyển sinh",
-      },
+  const choosePage = (event) => {
+    setPages({
+      currentPage: Number(event.target.id),
+      indexLast: Number(event.target.id) * novelsPerPage,
+      indexFirst: Number(event.target.id) * novelsPerPage - novelsPerPage,
+    });
+    setNovels({
+      currentTodo: novels.totalTodo.slice(pages.indexFirst, pages.indexLast),
+    });
+  };
 
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
+  const sortData = (data, sortOrder) => {
+    if (sortOrder === 0) {
+      // 0 sort by modified date
+      data.sort((a, b) => b.ModifiedDate - a.ModifiedDate);
+    } else if (sortOrder === 1) {
+      // 1 sort by view
+      data.sort((a, b) => b.Like - a.Like);
+    } else if (sortOrder === 2) {
+      // 2 sort by like
+      data.sort((a, b) => b.Like - a.Like);
+    } else if (sortOrder === 3) {
+      // 3 sort by subcribe
+      data.sort((a, b) => b.Subcribe - a.Subcribe);
+    } else if (sortOrder === 4) {
+      // 4 sort by name
+      data.sort((a, b) => a.ComicName - b.ComicName);
+    }
+  };
 
-      id: "00002",
-    },
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await axios.get("https://localhost:44311/api/Comic");
+      let totalData = data.data;
+      let currentData = [];
+      let pageNum = [];
 
-    {
-      info: {
-        img: "https://i.imgur.com/qiu52TA.jpg",
-        name: "Hùng Ca Đại Việt",
-        description:
-          "Sử nước Việt ta là một bản Hùng Ca bi tráng. thế nhưng những dấu vết lịch sử ghi lại còn bao. bao danh nhân, bao chiến tướng đều lưu mờ theo dòng thời gian lịch sử. dân ta lại không biết sử ta, mà lại thuộc sử tàu. ta rất thống hận, rất uất ức. Hùng Ca Đại Việt chính là một ngọn lửa muốn truyền cho sau này, hiểu sử ta, yêu sử ta, ghi ơn những người gầy dựng đất nước tươi đẹp này.",
-        genre: "Dã sử",
-      },
+      for (let i = 1; i <= Math.ceil(totalData.length / novelsPerPage); i++) {
+        pageNum.push(i);
+      }
 
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
+      sortData(totalData, 0);
+      currentData = totalData.slice(pages.indexFirst, pages.indexLast);
+      setNovels({ totalTodo: totalData, currentTodo: currentData });
+      setPageList(pageNum);
+    };
 
-      id: "00003",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/Ws5OQ4d.jpg",
-        name: "Nhất Thống Thiên Hạ",
-        description:
-          "Một ông trùm xã hội đen khi về làm vua thời cổ đại sẽ gặp những cảnh ngộ ra sao? Một đất nước loạn lạc khắp nơi có được bình định hay không? Một đế chế hùng mạnh sẽ được dựng nên như thế nào? Một hôn quân, một bạo chúa, hay một minh quân sẽ xuất thế?",
-        genre: "Tu tiên",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00004",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/afjKCiD.jpg",
-        name: "Tiến Hóa Tại Vô Hạn Thế Giới",
-        description:
-          "Quá khứ như một bàn tay vô hình bóp lấy cổ hắn, dìm hắn xuống nước, ép cho hắn không thở nổi. Nhưng hắn lại chỉ có thể mang theo thống khổ và tuyệt vọng mà sống, giống một kẻ mãi mãi lạc lối trong bóng đêm, không tìm thấy được ánh sáng.",
-        genre: "Chuyển sinh",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00005",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/lwrH296.jpg",
-        name: "Hùng Ca Đại Việt",
-        description:
-          "Sử nước Việt ta là một bản Hùng Ca bi tráng. thế nhưng những dấu vết lịch sử ghi lại còn bao. bao danh nhân, bao chiến tướng đều lưu mờ theo dòng thời gian lịch sử. dân ta lại không biết sử ta, mà lại thuộc sử tàu. ta rất thống hận, rất uất ức. Hùng Ca Đại Việt chính là một ngọn lửa muốn truyền cho sau này, hiểu sử ta, yêu sử ta, ghi ơn những người gầy dựng đất nước tươi đẹp này.",
-        genre: "Dã sử",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00006",
-    },
-    {
-      info: {
-        img: "https://i.imgur.com/F4YrlR5.jpg",
-        name: "Nhất Thống Thiên Hạ",
-        description:
-          "Một ông trùm xã hội đen khi về làm vua thời cổ đại sẽ gặp những cảnh ngộ ra sao? Một đất nước loạn lạc khắp nơi có được bình định hay không? Một đế chế hùng mạnh sẽ được dựng nên như thế nào? Một hôn quân, một bạo chúa, hay một minh quân sẽ xuất thế?",
-        genre: "Tu tiên",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00001",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/BhKGqHl.jpg",
-        name: "Tiến Hóa Tại Vô Hạn Thế Giới",
-        description:
-          "Quá khứ như một bàn tay vô hình bóp lấy cổ hắn, dìm hắn xuống nước, ép cho hắn không thở nổi. Nhưng hắn lại chỉ có thể mang theo thống khổ và tuyệt vọng mà sống, giống một kẻ mãi mãi lạc lối trong bóng đêm, không tìm thấy được ánh sáng.",
-        genre: "Chuyển sinh",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00002",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/qiu52TA.jpg",
-        name: "Hùng Ca Đại Việt",
-        description:
-          "Sử nước Việt ta là một bản Hùng Ca bi tráng. thế nhưng những dấu vết lịch sử ghi lại còn bao. bao danh nhân, bao chiến tướng đều lưu mờ theo dòng thời gian lịch sử. dân ta lại không biết sử ta, mà lại thuộc sử tàu. ta rất thống hận, rất uất ức. Hùng Ca Đại Việt chính là một ngọn lửa muốn truyền cho sau này, hiểu sử ta, yêu sử ta, ghi ơn những người gầy dựng đất nước tươi đẹp này.",
-        genre: "Dã sử",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00003",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/Ws5OQ4d.jpg",
-        name: "Nhất Thống Thiên Hạ",
-        description:
-          "Một ông trùm xã hội đen khi về làm vua thời cổ đại sẽ gặp những cảnh ngộ ra sao? Một đất nước loạn lạc khắp nơi có được bình định hay không? Một đế chế hùng mạnh sẽ được dựng nên như thế nào? Một hôn quân, một bạo chúa, hay một minh quân sẽ xuất thế?",
-        genre: "Tu tiên",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00004",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/afjKCiD.jpg",
-        name: "Tiến Hóa Tại Vô Hạn Thế Giới",
-        description:
-          "Quá khứ như một bàn tay vô hình bóp lấy cổ hắn, dìm hắn xuống nước, ép cho hắn không thở nổi. Nhưng hắn lại chỉ có thể mang theo thống khổ và tuyệt vọng mà sống, giống một kẻ mãi mãi lạc lối trong bóng đêm, không tìm thấy được ánh sáng.",
-        genre: "Chuyển sinh",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00005",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/lwrH296.jpg",
-        name: "Hùng Ca Đại Việt",
-        description:
-          "Sử nước Việt ta là một bản Hùng Ca bi tráng. thế nhưng những dấu vết lịch sử ghi lại còn bao. bao danh nhân, bao chiến tướng đều lưu mờ theo dòng thời gian lịch sử. dân ta lại không biết sử ta, mà lại thuộc sử tàu. ta rất thống hận, rất uất ức. Hùng Ca Đại Việt chính là một ngọn lửa muốn truyền cho sau này, hiểu sử ta, yêu sử ta, ghi ơn những người gầy dựng đất nước tươi đẹp này.",
-        genre: "Dã sử",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00006",
-    },
-    {
-      info: {
-        img: "https://i.imgur.com/F4YrlR5.jpg",
-        name: "Nhất Thống Thiên Hạ",
-        description:
-          "Một ông trùm xã hội đen khi về làm vua thời cổ đại sẽ gặp những cảnh ngộ ra sao? Một đất nước loạn lạc khắp nơi có được bình định hay không? Một đế chế hùng mạnh sẽ được dựng nên như thế nào? Một hôn quân, một bạo chúa, hay một minh quân sẽ xuất thế?",
-        genre: "Tu tiên",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00001",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/BhKGqHl.jpg",
-        name: "Tiến Hóa Tại Vô Hạn Thế Giới",
-        description:
-          "Quá khứ như một bàn tay vô hình bóp lấy cổ hắn, dìm hắn xuống nước, ép cho hắn không thở nổi. Nhưng hắn lại chỉ có thể mang theo thống khổ và tuyệt vọng mà sống, giống một kẻ mãi mãi lạc lối trong bóng đêm, không tìm thấy được ánh sáng.",
-        genre: "Chuyển sinh",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00002",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/qiu52TA.jpg",
-        name: "Hùng Ca Đại Việt",
-        description:
-          "Sử nước Việt ta là một bản Hùng Ca bi tráng. thế nhưng những dấu vết lịch sử ghi lại còn bao. bao danh nhân, bao chiến tướng đều lưu mờ theo dòng thời gian lịch sử. dân ta lại không biết sử ta, mà lại thuộc sử tàu. ta rất thống hận, rất uất ức. Hùng Ca Đại Việt chính là một ngọn lửa muốn truyền cho sau này, hiểu sử ta, yêu sử ta, ghi ơn những người gầy dựng đất nước tươi đẹp này.",
-        genre: "Dã sử",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00003",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/Ws5OQ4d.jpg",
-        name: "Nhất Thống Thiên Hạ",
-        description:
-          "Một ông trùm xã hội đen khi về làm vua thời cổ đại sẽ gặp những cảnh ngộ ra sao? Một đất nước loạn lạc khắp nơi có được bình định hay không? Một đế chế hùng mạnh sẽ được dựng nên như thế nào? Một hôn quân, một bạo chúa, hay một minh quân sẽ xuất thế?",
-        genre: "Tu tiên",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00004",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/afjKCiD.jpg",
-        name: "Tiến Hóa Tại Vô Hạn Thế Giới",
-        description:
-          "Quá khứ như một bàn tay vô hình bóp lấy cổ hắn, dìm hắn xuống nước, ép cho hắn không thở nổi. Nhưng hắn lại chỉ có thể mang theo thống khổ và tuyệt vọng mà sống, giống một kẻ mãi mãi lạc lối trong bóng đêm, không tìm thấy được ánh sáng.",
-        genre: "Chuyển sinh",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00005",
-    },
-
-    {
-      info: {
-        img: "https://i.imgur.com/lwrH296.jpg",
-        name: "Hùng Ca Đại Việt",
-        description:
-          "Sử nước Việt ta là một bản Hùng Ca bi tráng. thế nhưng những dấu vết lịch sử ghi lại còn bao. bao danh nhân, bao chiến tướng đều lưu mờ theo dòng thời gian lịch sử. dân ta lại không biết sử ta, mà lại thuộc sử tàu. ta rất thống hận, rất uất ức. Hùng Ca Đại Việt chính là một ngọn lửa muốn truyền cho sau này, hiểu sử ta, yêu sử ta, ghi ơn những người gầy dựng đất nước tươi đẹp này.",
-        genre: "Dã sử",
-      },
-
-      states: {
-        lastUpdate: "2022-12-12",
-        complete: true,
-        chapter: 234,
-        view: 12947,
-        like: 1221,
-        rate: {
-          ratePoints: 4.5,
-          rateTimes: 1447,
-        },
-      },
-
-      id: "00006",
-    },
-  ];
+    fetchData().catch(console.error);
+  }, []);
 
   return (
     <div className="genre-group">
@@ -506,7 +104,12 @@ export default function Genre() {
         <Accordion.Item eventKey="0">
           <Accordion.Header>Thể loại</Accordion.Header>
           <Accordion.Body>
-            <ToggleButtonGroup className="toggle-btn-group" type="checkbox">
+            <ToggleButtonGroup
+              className="toggle-btn-group"
+              name="genre"
+              type="radio"
+              defaultValue={0}
+            >
               {genreList.map(({ name, id }) => (
                 <ToggleButton
                   className="filter-toggle-btn"
@@ -544,7 +147,7 @@ export default function Genre() {
                 variant="outline-primary"
                 value={2}
               >
-                Lượt xem (Tổng)
+                Lượt xem
               </ToggleButton>
               <ToggleButton
                 className="filter-toggle-btn"
@@ -552,7 +155,7 @@ export default function Genre() {
                 variant="outline-primary"
                 value={3}
               >
-                Lượt xem (TB)
+                Lượt yêu thích
               </ToggleButton>
               <ToggleButton
                 className="filter-toggle-btn"
@@ -560,7 +163,7 @@ export default function Genre() {
                 variant="outline-primary"
                 value={4}
               >
-                Điểm đánh giá
+                Lượt theo dõi
               </ToggleButton>
               <ToggleButton
                 className="filter-toggle-btn"
@@ -568,7 +171,7 @@ export default function Genre() {
                 variant="outline-primary"
                 value={5}
               >
-                Lượt yêu thích
+                Tên truyện
               </ToggleButton>
               <ToggleButton
                 className="filter-toggle-btn"
@@ -576,23 +179,7 @@ export default function Genre() {
                 variant="outline-primary"
                 value={6}
               >
-                Lượt theo dõi
-              </ToggleButton>
-              <ToggleButton
-                className="filter-toggle-btn"
-                id={"sort-toggle-btn-7"}
-                variant="outline-primary"
-                value={7}
-              >
-                Số chương
-              </ToggleButton>
-              <ToggleButton
-                className="filter-toggle-btn"
-                id={"sort-toggle-btn-8"}
-                variant="outline-primary"
-                value={8}
-              >
-                Số bình luận
+                Đã hoàn thành
               </ToggleButton>
             </ToggleButtonGroup>
           </Accordion.Body>
@@ -603,25 +190,47 @@ export default function Genre() {
         <div className="box-title">Danh sách truyện</div>
         <div className="box-content">
           <Row>
-            {novelArr.map(({ info, states }) => (
-              <Col xs="12" md="6" lg="4">
-                <NovelBoxItem info={info} states={states} focusState="newest-update" />
-              </Col>
-            ))}
+            {novels.currentTodo.map(
+              ({ ComicName, Thumbnail, Description, Like, Subcribe, Chapter, Status, ComicId }) => (
+                <Col xs="12" md="6" lg="4">
+                  <NovelBoxItem
+                    name={ComicName}
+                    thumbnail={Thumbnail}
+                    description={Description}
+                    like={Like}
+                    view={Subcribe}
+                    chapter={Chapter}
+                    status={Status}
+                    icon={"modified-date"}
+                    key={ComicId}
+                    comicLink={"/Overview/" + ComicId}
+                  />
+                </Col>
+              )
+            )}
           </Row>
         </div>
       </div>
       <div className="content-pagination">
         <Pagination className="pagination-md justify-content-center">
-          <Pagination.Item>{1}</Pagination.Item>
-          <Pagination.Ellipsis />
-
-          <Pagination.Item>{5}</Pagination.Item>
-          <Pagination.Item active>{6}</Pagination.Item>
-          <Pagination.Item>{7}</Pagination.Item>
-
-          <Pagination.Ellipsis />
-          <Pagination.Item>{10}</Pagination.Item>
+          {pageList.map((id) => {
+            if (id === pages.currentPage)
+              return (
+                <Pagination.Item
+                  key={id}
+                  id={id}
+                  className={id === pages.currentPage ? "active" : ""}
+                >
+                  {id}
+                </Pagination.Item>
+              );
+            else
+              return (
+                <Pagination.Item key={id} id={id} onclick={choosePage}>
+                  {id}
+                </Pagination.Item>
+              );
+          })}
         </Pagination>
       </div>
     </div>
