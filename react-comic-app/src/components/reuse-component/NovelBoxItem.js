@@ -1,6 +1,7 @@
 import React from "react";
 import "../../css/novelboxitem.css";
 import { RiBook2Fill, RiCheckboxCircleFill, RiEyeLine, RiHeartFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 export default function NovelBoxItem(props) {
   const icon = props.icon;
@@ -63,14 +64,14 @@ export default function NovelBoxItem(props) {
   return (
     <>
       <div className="nb-item">
-        <a href="/">
+        <Link to={props.comicLink}>
           <div className="nb-item__img" style={{ background: `url(${props.thumbnail})` }}></div>
-        </a>
+        </Link>
 
         <div className="nb-item-right">
-          <a className="nb-item__title line-1" href="/">
+          <Link className="nb-item__title line-1" to={props.comicLink}>
             {props.name}
-          </a>
+          </Link>
           <p className="nb-item__description line-2">{props.description}</p>
           <div className="nb-item-foot">{iconDisplay}</div>
         </div>

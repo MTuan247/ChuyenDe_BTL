@@ -54,6 +54,7 @@ export default function NovelBox(props) {
                   status={Status}
                   icon={props.sort}
                   key={ComicId}
+                  comicLink={"/Overview/" + ComicId}
                 />
               </Col>
             )
