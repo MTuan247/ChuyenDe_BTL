@@ -42,22 +42,22 @@ namespace DL.Implement
 
             var comics = _dbConnection.Query<ComicDTO>(proc, parameters, commandType: CommandType.StoredProcedure);
 
-            //switch (sortOrder)
-            //{
-            //    case null:
-            //    case (int)SortOrder.Code:
-            //        comics = comics.OrderBy(x => x.ComicCode).ThenBy(x => x.ComicName);
-            //        break;
-            //    case (int)SortOrder.Name:
-            //        comics = comics.OrderBy(x => x.ComicName).ThenBy(x => x.ModifiedDate);
-            //        break;
-            //    case (int)SortOrder.CreatedDate:
-            //        comics = comics.OrderBy(x => x.CreatedDate).ThenBy(x => x.ComicName);
-            //        break;
-            //    case (int)SortOrder.ModifiedDate:
-            //        comics = comics.OrderBy(x => x.ModifiedDate).ThenBy(x => x.ComicName);
-            //        break;
-            //}
+            switch (sortOrder)
+            {
+               case null:
+               case (int)SortOrder.Code:
+                   comics = comics.OrderBy(x => x.ComicCode).ThenBy(x => x.ComicName);
+                   break;
+               case (int)SortOrder.Name:
+                   comics = comics.OrderBy(x => x.ComicName).ThenBy(x => x.ModifiedDate);
+                   break;
+               case (int)SortOrder.CreatedDate:
+                   comics = comics.OrderBy(x => x.CreatedDate).ThenBy(x => x.ComicName);
+                   break;
+               case (int)SortOrder.ModifiedDate:
+                   comics = comics.OrderBy(x => x.ModifiedDate).ThenBy(x => x.ComicName);
+                   break;
+            }
 
             var totalPage = parameters.Get<int>("@TotalPage");
             var totalRecord = parameters.Get<int>("@TotalRecord");

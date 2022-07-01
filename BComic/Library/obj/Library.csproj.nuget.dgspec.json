@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {}
+    "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {}
   },
   "projects": {
-    "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {
+    "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj",
+        "projectUniqueName": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "G:\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "G:\\ChuyenDe_BTL\\BComic\\Library\\obj\\",
+        "projectPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\Library.csproj",
+        "packagesPath": "C:\\Users\\MSI PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MSI PC\\OneDrive\\Tài liệu\\GitHub\\ChuyenDe_BTL\\BComic\\Library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MSI PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,20 +63,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

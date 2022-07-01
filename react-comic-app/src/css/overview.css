@@ -37,8 +37,8 @@
 }
 
 .overview-group .info-img {
-    min-width: 225px;
-    min-height: 300px;
+    min-width: 210px;
+    min-height: 280px;
     background-size: cover !important;
     background-position: top center !important;
     border: 6px solid lightgray;
@@ -48,7 +48,7 @@
 
 .overview-group .overview-btn {
     margin-bottom: 5px;
-    width: 110px;
+    width: 102px;
 }
 
 .overview-group div .overview-btn:first-child {
