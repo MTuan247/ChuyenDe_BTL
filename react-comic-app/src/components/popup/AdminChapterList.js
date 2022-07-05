@@ -5,6 +5,8 @@ import { BiPencil, BiTrash } from "react-icons/bi";
 import { PromiseRequest } from "../../utils";
 import Modal from "./Modal";
 import AdminChapterDetail from "./AdminChapterDetail";
+import { useDispatch } from 'react-redux';
+import { show } from "../../redux/reducer/messageBoxReducer";
 
 export default function AdminChapterList(props) {
 
@@ -33,6 +35,8 @@ export default function AdminChapterList(props) {
     })
   }
 
+  const dispatch = useDispatch();
+
   const clickItem = (model) => {
     setModel(model);
     setShowChapterDetail(true);
@@ -54,6 +58,16 @@ export default function AdminChapterList(props) {
     }).then(() => {
       load();
     });
+  }
+
+  const confirmDelete = (model) => {
+    dispatch(show({
+      title: "Xác nhận",
+      content: "Bạn có chắc chắn muốn xoá chương?",
+      ok: () => {
+        deleteItem(model);
+      },
+    }))
   }
 
   const deleteItem = (model) => {
@@ -98,7 +112,7 @@ export default function AdminChapterList(props) {
                   <td>
                     <div className="flex1 d-flex table-action">
                       <BiPencil title="Sửa" onClick={() => clickItem(chapter)} size={20} />
-                      <BiTrash title="Xoá" onClick={() => deleteItem(chapter)} size={20} />
+                      <BiTrash title="Xoá" onClick={() => confirmDelete(chapter)} size={20} />
                     </div>
                   </td>
                 </tr>

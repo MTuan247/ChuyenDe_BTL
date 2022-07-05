@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./App.css";
 import Home from "./components/screen/Home";
 import Genre from "./components/screen/Genre";
@@ -17,6 +17,7 @@ import TheSearchBar from "./components/layout/TheSearchBar";
 import "./css/layout/app.css";
 
 function App() {
+  
   return (
     <>
       <Router basename="Novel">

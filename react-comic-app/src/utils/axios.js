@@ -1,5 +1,7 @@
 import axios from 'axios'
 import { Constant } from '../resources';
+import { mask } from "../redux/reducer/contextReducer";
+import store from "../redux/store"
 
 const PromiseRequest = {};
 
@@ -27,6 +29,8 @@ PromiseRequest.send = (url, data, config = { method: "post" },) => {
     'Authorization': 'Bearer ' + localStorage.getItem("token")
   }
 
+  store.dispatch(mask(true));
+
   return new Promise((resolve, reject) => {
     axios({
       ...config,
@@ -34,8 +38,10 @@ PromiseRequest.send = (url, data, config = { method: "post" },) => {
       data: data,
       headers: headers
     }).then((res) => {
+      store.dispatch(mask(false));
       resolve(res);
     }).catch(res => {
+      store.dispatch(mask(false));
       reject(res);
     })
   })

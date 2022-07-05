@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Library.Models
 {
+    [Table("Chapter")]
     public class Chapter
     {
-        [Key]
+        [ExplicitKey]
         public int? ChapterId { get; set; }
         public string ChapterCode { get; set; }
         public string ChapterName { get; set; }

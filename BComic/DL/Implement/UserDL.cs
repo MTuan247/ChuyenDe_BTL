@@ -39,5 +39,25 @@ namespace DL.Implement
             return user;
         }
 
+        /// <summary>
+        /// Hàm lấy người dùng theo username
+        /// </summary>
+        /// <returns></returns>
+        /// CreatedBy: NMTuan (30/07/2021)
+        /// ModifiedBy: NMTuan (30/07/2021)
+        public UserDTO GetUser(string userName)
+        {
+
+            var sql = $"Select * from User u where u.UserName = @UserName;";
+
+            DynamicParameters parameters = new DynamicParameters();
+
+            parameters.Add("@UserName", userName);
+
+            var user = _dbConnection.QueryFirstOrDefault<UserDTO>(sql, parameters, commandType: CommandType.Text);
+
+            return user;
+        }
+
     }
 }

@@ -1,8 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import "../../css/popup/adminnoveldetail.scss";
-import { PromiseRequest } from "../../utils";
 import { Form, FormControl } from "react-bootstrap";
-import moment from 'moment';
 
 export default function AdminNovelDetail({ model, update = () => {} }) {
 

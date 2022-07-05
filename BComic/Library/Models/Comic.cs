@@ -21,6 +21,7 @@ namespace Library.Models
         /// 0 - Chưa hoàn thành, 1 - Hoàn thành
         /// </summary>
         public int Status { get; set; }
+        public int? CategoryId { get; set; }
         public string Thumbnail { get; set; }
         public string Description { get; set; }
         public DateTime? CreatedDate { get; set; }
