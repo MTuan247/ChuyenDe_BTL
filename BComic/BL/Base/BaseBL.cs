@@ -45,7 +45,7 @@ namespace BL.Base
         /// Hàm insert bản ghi
         /// </summary>
         /// <returns></returns>
-        public int Insert(TEntity entity)
+        public virtual int Insert(TEntity entity)
 
         {
             var baseDL = DLFactory.CreateAs<BaseDL<TEntity>>(serviceCollection);

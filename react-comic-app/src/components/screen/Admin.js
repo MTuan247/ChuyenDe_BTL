@@ -9,6 +9,9 @@ import AdminNovelDetail from "../popup/AdminNovelDetail";
 import Pagination from '../base-component/Pagination';
 import AdminChapterList from "../popup/AdminChapterList";
 
+import { show } from "../../redux/reducer/messageBoxReducer";
+import { useDispatch } from 'react-redux'
+
 export default function Admin() {
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -39,6 +42,8 @@ export default function Admin() {
 
   const [showPopup, setShowPopup] = useState(false);
   const [showChapterList, setShowChapterList] = useState(false);
+
+  const dispatch = useDispatch();
 
   const load = (param) => {
     let url = PromiseRequest.getServiceUrl("Comics", "Comic");
@@ -89,6 +94,16 @@ export default function Admin() {
     });
   }
 
+  const confirmDelete = (model) => {
+    dispatch(show({
+      title: "Xác nhận",
+      content: "Bạn có chắc chắn muốn xoá truyện?",
+      ok: () => {
+        deleteItem(model);
+      },
+    }))
+  }
+
   const add = () => {
     setShowPopup(true);
     setModel({...defaultModel});
@@ -122,7 +137,7 @@ export default function Admin() {
     <div className="container-xl admin-screen">
       <SearchBar value={searchQuery} onChange={changeSearch} />
       <div className="body-container">
-        <AdminNovelBox chapterList={showChapterListPopup} deleteItem={deleteItem} add={add} clickItem={clickItem} name="Danh sách truyện" list={novelList} />
+        <AdminNovelBox chapterList={showChapterListPopup} deleteItem={confirmDelete} add={add} clickItem={clickItem} name="Danh sách truyện" list={novelList} />
         <Pagination pageNumber={pageNumber} totalPage={totalPage} onChange={(page) => setPageNumber(page)} />
         <Modal modalTitle={modalTitle || 'Thêm mới'} save={handleSave} close={() => setShowPopup(false)} isShow={showPopup}>
           {

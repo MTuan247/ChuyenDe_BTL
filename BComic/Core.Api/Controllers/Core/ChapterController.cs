@@ -12,6 +12,10 @@ using Library.Models;
 using Microsoft.Extensions.Configuration;
 using Library.Enums;
 using Library.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using Library.Constants;
+using BL.Base;
+using BL.Implement;
 
 namespace Api.Controllers
 {
@@ -27,7 +31,28 @@ namespace Api.Controllers
         #endregion
 
         #region Methods
-        
+
+        /// <summary>
+        /// Method insert dữ liệu
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Authorize(Roles = Role.Admin)]
+        public override IActionResult Insert(Chapter entity)
+        {
+            try
+            {
+                var success = BLFactory.CreateAs<ChapterBL>(serviceCollection).Insert(entity);
+                return Ok(success);
+            }
+            catch (Exception ex)
+            {
+                serviceResult.ExceptionHandle(ex);
+                return StatusCode(500, serviceResult);
+            }
+
+        }
+
         #endregion
     }
 }

@@ -75,6 +75,28 @@ namespace BL.Auth
             return user;
         }
 
+        /// <summary>
+        /// Tìm người dùng theo username
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
+        public UserDTO GetByUserName(UserDTO login)
+        {
+            UserDTO user;
+
+            var userBL = BLFactory.CreateAs<UserBL>(serviceCollection);
+
+            user = (UserDTO)userBL.GetUser(login.Username);
+
+            if (user != null)
+            {
+                user.Password = null;
+            }
+
+            return user;
+        }
+
+
         #endregion
     }
 }
