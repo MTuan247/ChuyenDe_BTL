@@ -13,7 +13,7 @@ namespace Library.Models
         /// <summary>
         /// Id người dùng
         /// </summary>
-        [Key]
+        [ExplicitKey]
         public int UserId { get; set; }
         /// <summary>
         /// Tên tài khoản

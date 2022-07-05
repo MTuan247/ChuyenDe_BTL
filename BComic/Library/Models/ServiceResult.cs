@@ -50,6 +50,19 @@ namespace Library.Models
             this.DevMsg = ex.Message;
             this.UserMsg = Resources.ExceptionError;
         }
+
+        /// <summary>
+        /// Hàm xử lý khi xảy ra lỗi
+        /// </summary>
+        /// <param name="ex"></param>
+        /// Created by: NMTuan (09/08/2021)
+        public void ExceptionHandle()
+        {
+            this.Success = false;
+            this.StatusCode = StatusCode.Exception;
+            this.DevMsg = Resources.ExceptionError;
+            this.UserMsg = Resources.ExceptionError;
+        }
         #endregion
     }
 }

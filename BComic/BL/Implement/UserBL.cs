@@ -30,5 +30,18 @@ namespace BL.Implement
 
             return user;
         }
+
+        /// <summary>
+        /// Hàm lấy người dùng
+        /// </summary>
+        /// <returns></returns>
+        public UserDTO GetUser(string userName)
+        {
+            var dl = DLFactory.CreateAs<UserDL>(serviceCollection);
+
+            var user = dl.GetUser(userName);
+
+            return user;
+        }
     }
 }
