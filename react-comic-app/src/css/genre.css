@@ -7,6 +7,7 @@
     font-size: 21px;
     margin-bottom: 15px;
 }
+
 .genre-group .content-box {
     margin-bottom: 15px;
     padding: 9px 15px;
@@ -14,6 +15,31 @@
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     background: white;
+}
+
+.genre-group .accordion-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.genre-group .accordion-body a {
+    flex-grow: 1;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.genre-group .accordion-body .btn-primary {
+    color: white !important;
+}
+
+.genre-group .accordion-body .btn-outline-primary {
+    color: dodgerblue !important;
+}
+
+.genre-group .accordion-body .btn-outline-primary:hover {
+    color: white !important;
 }
 
 .genre-group .accordion-item:last-child {

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Button, ButtonGroup } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "../../css/comicview.css";
 
-export default function Overview() {
+export default function Comicview() {
   // const tokenDescription = novel.info.description.split(/\r?\n/);
 
-  const params = useParams();
+  const [params, setParams] = useParams();
 
   const [comicInfo, setComicInfo] = useState({
     ComicName: "",
@@ -77,6 +77,9 @@ export default function Overview() {
             Chương trước
           </Button>
         </Link>
+        <Link to={"/Overview/" + params.ComicId}>
+          <Button variant="outline-primary">Chọn chương</Button>
+        </Link>
         <Link to={"/Overview/" + params.ComicId + "/Read/" + comicInfo.NextId}>
           <Button variant="outline-primary" className="next-btn">
             Chương sau
@@ -101,6 +104,9 @@ export default function Overview() {
           <Button variant="outline-primary" className="prev-btn">
             Chương trước
           </Button>
+        </Link>
+        <Link to={"/Overview/" + params.ComicId}>
+          <Button variant="outline-primary">Chọn chương</Button>
         </Link>
         <Link to={"/Overview/" + params.ComicId + "/Read/" + comicInfo.NextId}>
           <Button variant="outline-primary" className="next-btn">
