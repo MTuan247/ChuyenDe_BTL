@@ -1,0 +1,40 @@
+.admin-chapter-list {
+    margin: 15px 10px 0px 10px;
+
+    .novel-box__head {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4px;
+    }
+    
+    .novel-box__head__title {
+        font-weight: 600;
+        font-size: 21px;
+    }
+    
+    .novel-box__head__link {
+        align-self: center;
+    }
+
+    table {
+        td {
+            line-height: 72px;
+            .table-action {
+                height: 72px;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                svg {
+                    margin: 4px;
+                }
+            }
+        }
+    }
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+

@@ -69,48 +69,8 @@ export default function TheHeader() {
                       Xuyên không
                     </Nav.Link>
                   </NavDropdown.Item>
-                </div>
-                <div className="dropdown-col">
                   <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Genre=5">
-                      Đam mỹ
-                    </Nav.Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Genre=6">
-                      Bách hợp
-                    </Nav.Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Genre=7">
-                      Cung đấu
-                    </Nav.Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Genre=8">
-                      Ngôn tình
-                    </Nav.Link>
-                  </NavDropdown.Item>
-                </div>
-
-                <div className="dropdown-col">
-                  <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Genre=9">
-                      Truyện ngắn
-                    </Nav.Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Genre=10">
-                      Tiểu thuyết
-                    </Nav.Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Genre=11">
-                      Light novel
-                    </Nav.Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Genre">
+                    <Nav.Link as={NavLink} to="Genre/0/0/0">
                       <strong>Xem tất cả</strong>
                     </Nav.Link>
                   </NavDropdown.Item>
@@ -126,34 +86,17 @@ export default function TheHeader() {
                 <div className="dropdown-col">
                   <NavDropdown.Item>
                     <Nav.Link as={NavLink} to="Ranking/1">
-                      Top lượt xem
+                      Truyện mới nhất
                     </Nav.Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
                     <Nav.Link as={NavLink} to="Ranking/2">
-                      Top yêu thích
+                      Top lượt xem
                     </Nav.Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
                     <Nav.Link as={NavLink} to="Ranking/3">
-                      Top đánh giá
-                    </Nav.Link>
-                  </NavDropdown.Item>
-                </div>
-                <div className="dropdown-col">
-                  <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Ranking/4">
                       Top theo dõi
-                    </Nav.Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Ranking/5">
-                      Top bình luận
-                    </Nav.Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Ranking/6">
-                      Top truyện dài
                     </Nav.Link>
                   </NavDropdown.Item>
                 </div>
