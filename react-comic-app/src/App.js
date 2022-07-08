@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./App.css";
 import Home from "./components/screen/Home";
 import Genre from "./components/screen/Genre";
@@ -17,7 +17,6 @@ import TheSearchBar from "./components/layout/TheSearchBar";
 import "./css/layout/app.css";
 
 function App() {
-  
   return (
     <>
       <Router basename="Novel">
@@ -28,8 +27,7 @@ function App() {
           <div className="body-container">
             <Routes>
               <Route index path="/" element={<Home />} />
-              <Route path="/Genre" element={<Genre />} />
-              {/* <Route path="/Overview" element={<Overview />} /> */}
+              <Route path="/Genre/:GenreId/:SortOrder/:PageNumber" element={<Genre />} />
               <Route path="/Overview/:ComicId" element={<Overview />} />
               <Route path="/Overview/:ComicId/Read/:ChapterId" element={<Comicview />} />
               <Route path="/Login" element={<Login />} />

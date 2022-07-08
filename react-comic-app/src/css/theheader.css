@@ -5,7 +5,6 @@ header .navbar {
     font-size: 15px;
 }
 
-
 header .navbar-nav {
     padding-left: 0;
 }
@@ -20,6 +19,10 @@ header .navbar-collapse {
 
 header .nav-item .nav-link {
     padding: 0.5rem 1.5rem !important;
+}
+
+header .dropdown-col {
+    width: 100%;
 }
 
 header .dropdown-item {
@@ -46,7 +49,7 @@ header .dropdown-menu.show {
     width: max-content;
 }
 
-header #user-dropdown + div {
+header #user-dropdown+div {
     width: min-content;
 }
 
@@ -64,7 +67,7 @@ header #user-dropdown + div {
         width: 150px;
     }
 
-    header #user-dropdown + div {
+    header #user-dropdown+div {
         border-left: 1px solid lightgray;
     }
 }
