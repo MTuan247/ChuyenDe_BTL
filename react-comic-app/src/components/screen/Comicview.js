@@ -7,7 +7,7 @@ import "../../css/comicview.css";
 export default function Comicview() {
   // const tokenDescription = novel.info.description.split(/\r?\n/);
 
-  const [params, setParams] = useParams();
+  const params = useParams();
 
   const [comicInfo, setComicInfo] = useState({
     ComicName: "",
