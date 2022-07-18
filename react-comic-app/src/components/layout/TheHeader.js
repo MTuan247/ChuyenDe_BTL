@@ -50,23 +50,23 @@ export default function TheHeader() {
               >
                 <div className="dropdown-col">
                   <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Genre=1">
-                      Tu tiên
+                    <Nav.Link as={NavLink} to="Genre/1/0/0">
+                      Huyền huyễn
                     </Nav.Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Genre=2">
-                      Hệ thống
+                    <Nav.Link as={NavLink} to="Genre/2/0/0">
+                      Tình cảm
                     </Nav.Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Genre=3">
-                      Chuyển sinh
+                    <Nav.Link as={NavLink} to="Genre/3/0/0">
+                      Phiêu lưu
                     </Nav.Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Genre=4">
-                      Xuyên không
+                    <Nav.Link as={NavLink} to="Genre/4/0/0">
+                      Hành động
                     </Nav.Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
@@ -85,18 +85,23 @@ export default function TheHeader() {
               >
                 <div className="dropdown-col">
                   <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Ranking/1">
+                    <Nav.Link as={NavLink} to="Genre/0/0/0">
                       Truyện mới nhất
                     </Nav.Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Ranking/2">
+                    <Nav.Link as={NavLink} to="Genre/0/1/0">
                       Top lượt xem
                     </Nav.Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                    <Nav.Link as={NavLink} to="Ranking/3">
-                      Top theo dõi
+                    <Nav.Link as={NavLink} to="Genre/0/2/0">
+                      Top yêu thích
+                    </Nav.Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Nav.Link as={NavLink} to="Genre/0/4/0">
+                      Top yêu thích
                     </Nav.Link>
                   </NavDropdown.Item>
                 </div>

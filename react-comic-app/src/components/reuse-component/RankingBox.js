@@ -16,8 +16,8 @@ export default function RankingBox(props) {
       if (props.sort === "like") {
         dataLong = [...dataLong].sort((a, b) => b.Like - a.Like);
       } else if (props.sort === "view") {
-        dataLong = [...dataLong].sort((a, b) => b.Subcribe - a.Subcribe);
-      } else if (props.sort === "follow") {
+        dataLong = [...dataLong].sort((a, b) => b.Chapter - a.Chapter);
+      } else if (props.sort === "subcribe") {
         dataLong = [...dataLong].sort((a, b) => b.Subcribe - a.Subcribe);
       }
 
@@ -39,9 +39,9 @@ export default function RankingBox(props) {
 
   switch (props.sort) {
     case "view":
-      rankingValueArr = novels.map(({ Subcribe, ComicId }) => (
+      rankingValueArr = novels.map(({ Chapter, ComicId }) => (
         <span className="ranking__value" key={ComicId}>
-          <RiEyeLine /> {Subcribe}
+          <RiEyeLine /> {Chapter}
         </span>
       ));
       break;

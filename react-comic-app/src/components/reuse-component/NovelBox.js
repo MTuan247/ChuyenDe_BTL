@@ -18,7 +18,7 @@ export default function NovelBox(props) {
       } else if (props.sort === "modified-date") {
         dataLong = [...dataLong].sort((a, b) => b.ModifiedDate - a.ModifiedDate);
       } else if (props.sort === "view") {
-        dataLong = [...dataLong].sort((a, b) => b.Subcribe - a.Subcribe);
+        dataLong = [...dataLong].sort((a, b) => b.Chapter - a.Chapter);
       } else if (props.sort === "status") {
         dataLong = [...dataLong].sort((a, b) => b.Status - a.Status);
       }
@@ -49,7 +49,7 @@ export default function NovelBox(props) {
                   thumbnail={Thumbnail}
                   description={Description}
                   like={Like}
-                  view={Subcribe}
+                  view={Chapter}
                   chapter={Chapter}
                   status={Status}
                   icon={props.sort}
